@@ -18,6 +18,32 @@
 	}
 }
 
+// disclaimer
+.site-footer span {
+	display: none;
+
+	@include breakpoint(sm) {
+		display: inline-block;
+	}
+}
+
+.site-footer a {
+	color: $gray;
+	margin-left: 1.2em;
+
+	@include breakpoint(sm) {
+		margin-left: 2em;
+	}
+
+	@include breakpoint(lg) {
+		margin-left: 3em;
+	}
+
+	@include hocus {
+		color: lighten($gray, 5%);
+	}
+}
+
 .back-to-top {
 	display: none; // hide intially
 	height: 2.5em;
