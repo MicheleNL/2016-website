@@ -1,0 +1,75 @@
+/* Page navigation (prev next post)
+----------------------------------*/
+.page-navigation {
+	display: none;
+	flex-direction: row;
+	align-items: center;
+	border-top: 0.05em solid $text-color;
+
+	@include breakpoint(sm){
+		display: flex;
+	}
+
+	// flex the page nav items 
+	> a {
+		flex: 1 1 50%;
+		font-weight: 600;
+		padding: 2em;
+		color: $text-color;
+		font-family: $font-sans-serif;
+		
+		@include hocus {
+			color: lighten($text-color, 10%);
+		}	
+	}
+
+	svg {
+		width: 1.5em;
+		vertical-align: middle;
+		margin-left: 2em;
+		fill: currentColor;
+	}	
+}
+
+.next-link {
+	text-align: right;
+	position: relative;
+}
+
+.next-link:after {
+	content: "";
+	width: 0.05em;
+	height: 80%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-50%, -50%);
+	display: block;
+	background: $text-color;
+}
+
+.prev-link {
+	text-align: left;
+}
+
+.prev-link svg,
+.next-link svg {
+	transition: margin 0.1s;
+}
+
+.prev-link svg {
+	margin: -0.1em 0.4em 0 0;
+	transform: rotate(-180deg);	
+}
+
+.next-link svg {
+	margin: -0.1em 0 0 0.4em;
+}
+
+.prev-link:hover svg {
+	margin-right: 1em;
+}
+
+.next-link:hover svg {
+	margin-left: 1em;   
+}

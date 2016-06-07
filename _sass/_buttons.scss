@@ -1,0 +1,52 @@
+/* Buttons
+---------------------------------*/
+button,
+[role=button] {
+	$arrow-width: 1.5em;
+	position: relative;
+	display: inline-block;
+	border: 0.09rem solid $text-color;
+	border-radius: 1.25em;
+	font-family: $font-sans-serif-black;
+	font-size: 0.96em;
+	font-weight: normal;
+	line-height: 2;
+	color: $text-color; 
+	padding: 0.15em 4em 0.23em 1.5em;
+	cursor: pointer;
+	text-transform: lowercase;
+	margin-bottom: 1.5em;
+	transition: 0.3s;
+		
+	@include breakpoint(sm){	
+		// apply a little margin if > 1 button
+		+ button,
+		+ [role=button] {
+			margin-left: 0.5em;
+		}
+	}
+	
+	@include hocus {
+		padding-left: 2.75em;
+		padding-right: 2.75em;
+
+		svg {
+			opacity: 0;
+			right: -$arrow-width;
+		}
+	}
+	
+	// reset content link style
+	&:before {
+		content: none;
+	}
+
+	svg {
+		position: absolute;
+		top: 0.38em;
+		width: $arrow-width;
+		right: $arrow-width;
+		fill: currentColor;
+		transition: 0.3s;
+	}	
+}

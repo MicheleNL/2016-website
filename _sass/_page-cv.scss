@@ -1,0 +1,70 @@
+/* The CV page
+------------------------------*/
+
+// generic cv section settings
+.cv-section {
+
+	> header {
+		background-color: $text-color;
+		color: white;	
+	}
+
+	.col {
+		@include responsive-padding();
+	}
+}
+
+// quotes 
+.quotes {
+	background: $brand-color;
+	@include responsive-padding();
+}
+
+.quotes img {
+	filter: grayscale(100%);
+}
+
+.quotes	blockquote:last-of-type {
+	margin-bottom: 0;
+}
+
+// skills list
+.skills {
+	text-align: center;
+	
+	h3,
+	section {
+		flex-basis: 100%;
+	}
+
+	section:not(:first-of-type):before {
+		content: "";
+		width: 2em;
+		display: inline-block;
+		border-top: 0.05em solid $brand-color;
+	}
+
+	h4 {
+		margin-top: 1em;
+	}
+ 	
+ 	p {
+		margin-bottom: 0.5em;
+	}	
+}
+
+// questions block
+.questions  {
+	background: $text-color;
+	color: white;
+	@include responsive-padding();
+
+	&.col {
+		align-items: flex-start;
+	}
+
+	[role=button]{
+		border-color: white;
+		color: white;
+	}
+}

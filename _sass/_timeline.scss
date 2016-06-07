@@ -1,0 +1,115 @@
+/*  Timeline with animated lines and dots
+-------------------------------------------*/
+.timeline {
+	@extend %clearfix;
+
+	&.col {
+		display: block;
+		overflow: hidden; // needed for ani from outside viewport
+	}
+
+	dt {
+		width: 15%;
+		text-align: right;
+		padding: 2.2em 1em 0 0;
+		font-size: 0.6em;
+		float: left;
+
+		@include breakpoint(sm){
+			font-size: 0.8em;
+			padding-top: 1.7em;
+		}
+	}
+
+	dd {
+		position: relative;
+		float: left;
+		width: 85%;
+		padding: 0 0 1em 1em;
+
+		@include breakpoint(sm){
+			padding: 0 0 1em 2em;
+		}
+
+		// line
+		&:before {
+			content: "";
+			width: 0.05em;
+			display: block;
+			left: -0.05em;
+			top: 2.5em;
+			position: absolute;
+			background: $brand-color;
+			height: 0%;
+		}
+
+		// no line on last item
+		&:last-of-type:before {
+			content: none;
+		}
+
+		article {
+			transform: translate3d(2em, 0, 0);
+			opacity: 0;
+			will-change: transform, opacity;
+
+			// when in viewport
+			&.animate {
+				transform: translate3d(0, 0, 0);
+				transition: all 0.75s 0.2s ease;
+				opacity: 1;
+			}
+		}
+	
+		// animate lines 
+		&.animate:before {
+			height: calc(100% - 14px);
+			transition: all 0.8s 0.15s;
+		}
+		
+		// dots on lines
+		.time-dot {
+			display: block;
+			width: 11px;
+			height: 11px;
+			background: $bg-color;
+			border-radius: 50%;
+			border: 0.15rem solid $brand-color;			
+			position: absolute;
+			top:  1.85em;
+			left: -6px;
+			transform: scale(0);
+			
+			// animate dots 
+			&.animate {
+				animation: scale-in 0.6s 0.15s forwards;
+				animation-timing-function: cubic-bezier(0.53, 0.08, 0.07, 1.22);
+			}
+		}
+	}
+	
+	// header in timeline items
+	header {
+		margin-top: 1.5em;
+		
+		p {
+			color: lighten($text-color, 12%);
+			margin: 0;
+			font-style: italic;
+			line-height: 1.2;
+		}
+		
+		// don't show extra info for now...
+		~ * {
+			display: none;
+		}
+	}
+}
+
+// different alignment for bigger timeline
+.timeline-experience dt {
+	width: 25%;
+}
+.timeline-experience dd {
+	width: 75%;
+}

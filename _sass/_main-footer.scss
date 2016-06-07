@@ -1,0 +1,49 @@
+/* The main footer
+------------------------------*/
+.site-footer {
+	clear: both;
+	background: $gray-lighter;
+	padding: $gutter-sm;
+	font-family: $font-sans-serif-bold;	
+	font-size: 1em;
+
+	@include breakpoint(md) {
+		padding-left: $gutter-md;
+		padding-right: $gutter-md;
+	}
+
+	@include breakpoint(lg) {
+		padding-left: $gutter-lg;
+		padding-right: $gutter-lg;
+	}
+}
+
+.back-to-top {
+	display: none; // hide intially
+	height: 2.5em;
+	width: 2.5em;
+	line-height: 2.5em;
+	color: lighten($text-color, 15%);
+	border: 0.09rem solid;
+	border-radius: 50%;
+	text-align: center;
+	z-index: 999;
+	position: fixed;
+	bottom: 0.8em;
+	right: $gutter-sm;
+
+	@include breakpoint(md) {
+		right: $gutter-md;
+	}
+
+	@include breakpoint(lg) {
+		right: $gutter-lg;
+	}
+}
+
+.back-to-top svg {
+	transform: rotate(-90deg);
+	vertical-align: middle;
+	width: 1.5em;
+	fill: currentColor;
+}

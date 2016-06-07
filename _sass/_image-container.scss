@@ -1,0 +1,97 @@
+/* Big images in content
+------------------------------*/
+.image-container,
+.caption {
+	position: relative;
+	
+	img  {
+		width: 100%;
+		opacity: 0;
+		will-change: opacity;
+		
+		&.animate {
+			transition: all 1.1s 0.1s ease;
+			opacity: 1;
+		}
+	}
+
+	+ h2, 
+	+ h3 {
+		margin-top: 0.4em;
+	}
+}
+
+p {
+	position: relative; // needs to be rel for positioning img
+}
+
+// full width images
+.full-width {
+	margin: 2em 0;
+	max-width: none;
+}
+
+// image container to break out margins
+.image-container {
+	transition: margin 0.15s ease-out;
+	margin: 0;
+	position: relative;
+
+	@include breakpoint(sm) {
+		margin-left: -$gutter-sm;  
+		margin-right: -$gutter-sm; 
+		transition: margin 0.15s ease-in;
+	}
+
+	@include breakpoint(md) {
+		margin-left: -$gutter-xl;  
+		margin-right: -$gutter-xl; 
+	}
+}
+
+// colored image frame behind img 
+.img-frame {
+	background: $brand-color; 
+	margin: 0.32em 0;
+
+	.image-container:first-child & {
+		margin-top: 0;
+	}
+
+	@media screen and (min-width: 30em) {	
+		margin: 2em 0;			
+	}
+}
+
+// image captions
+.caption {
+	position: relative;
+	font-size: 0.9em;
+	font-family: $font-sans-serif-bold;
+	line-height: 1.2;
+	display: block;
+	margin: 1em 0 2em 0;
+	padding: 0;
+	z-index: 1;
+
+	@include breakpoint(sm){
+		margin: -1.35em 0 2em 0;
+		padding: 0 $gutter-md;
+	}
+
+	@include breakpoint(md){
+		padding: 0 $gutter-xl 0 ($gutter-xl + 2rem);
+
+		// pretty line next to caption
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -0.5em;
+			left: $gutter-xl;
+			border-left: 0.09rem solid;
+			height: 100%;
+		}
+
+	}	
+}

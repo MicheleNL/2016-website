@@ -1,0 +1,93 @@
+/* Helpers: placeholders
+---------------------------------*/
+
+// clearfix
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// screenreader text
+.screenreader {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/* Helpers: mixins
+---------------------------------*/
+
+// mixin for automatically including focus styles with hover
+@mixin hocus {
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+// mixin for easier media queries
+$breakpoint-lg:		60em;
+$breakpoint-md:		55em;
+$breakpoint-sm:		30em;
+
+@mixin breakpoint($viewport) {
+	// large
+	@if $viewport == lg {
+		@media (min-width: $breakpoint-lg) { 				
+			@content; 
+		}
+	}
+	// medium
+	@else if $viewport == md {
+		@media (min-width: $breakpoint-md) { 
+			@content; 
+		}
+	}
+	// small
+	@else if $viewport == sm {
+		@media (min-width: $breakpoint-sm)  {
+			@content; 
+		}
+	}
+}
+// usage:  @include breakpoint(lg) { color: hotpink; }
+
+
+// mixin for slide up animation
+@mixin slide-up($offset, $duration, $delay) {
+	
+	opacity: 0;
+	transform: translate3d(0, $offset, 0);
+	will-change: transform, opacity;
+
+	@keyframes slide-up{
+		0% 		{ transform: translate3d(0, $offset, 0); opacity: 0; }
+		100%	{ transform: none; opacity: 1; }
+	}
+	&.animate {
+		animation: slide-up $duration $delay both cubic-bezier(.4,0,.2,1);		  
+	}
+}
+
+// usage:  @include slide-up(100%, 0.4s, 0.1s);
+
+
+
+// mixin for relative padding
+@mixin responsive-padding {
+	padding: $gutter-sm;
+
+	@include breakpoint(md) {
+		padding: $gutter-md;
+	}
+
+	@include breakpoint(lg) {
+		padding: $gutter-xl;
+	}
+}

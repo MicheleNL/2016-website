@@ -1,0 +1,12 @@
+/* The About page
+------------------------------*/
+.about {
+	section .col:first-child {
+		background: $text-color;
+		color: white;
+	}
+
+	.col {
+		@include responsive-padding();
+	}
+}

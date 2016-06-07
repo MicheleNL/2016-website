@@ -1,0 +1,104 @@
+// generic block module
+.block-item {
+	position: relative;
+	
+	// mobile first - change order with flexbox
+	@include breakpoint(md) {
+		&:nth-child(even) .col:nth-child(1) {
+			order: 1;
+		}
+	}
+
+	// overlay effect on hover
+	@include hocus {
+		.block-item-img {
+			filter: none;
+		}
+
+		.block-item-img:before {
+			background: rgba($text-color, 0.3);
+			transition: all 0.5s ease-in;
+		}
+	}
+}
+
+// centered headings in block items
+.block-item > header {		
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-align: center;
+	width: 100%;
+	position: relative;
+	min-height: 10em;
+	justify-content: center;
+	padding: 0 $gutter-sm;
+
+	h2,
+	h3 {
+		margin: 0;
+	}
+
+	h2 {
+		font-size: 2em;
+		will-change: transform;
+		transition: 0.3s;
+		padding: 0;
+		letter-spacing: 0.03em;
+
+		@include breakpoint(md) {
+			font-size: 2.6em;
+		}
+	}
+
+	h3 {
+		font-size: 1.1em;
+		font-family: $font-sans-serif;
+		color: lighten($text-color, 13%);
+		text-transform: lowercase;
+		@include slide-up(100%, 0.9s, 0.1s);
+
+		&.animate {
+			margin-top: 0.8em;
+		}	
+	}
+}
+
+// block items with background images
+.block-item-img  {
+	position: relative;
+	display: block;
+	width: 100%;
+	min-height: 10em;
+	filter: grayscale(50%);
+	will-change: opacity;
+	transition: all 0.3s ease-in;
+	background: {
+		color: $text-color;
+		size: cover;
+		position: center bottom;
+	}
+
+	// larger images on bigger screens
+	@include breakpoint(md){
+		min-height: 18em;
+	}
+}
+// semi trans layer
+.block-item-img:before {
+	content: "";
+	background: rgba($text-color, 0.7);
+	width:100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: all 0.3s ease-out;
+}
+
+// apply text-shadow for readability
+.block-item-img	h2 {
+	text-shadow: 0 0 1em rgba($text-color, 0.8);
+}

@@ -1,0 +1,19 @@
+// introduction row with cols
+.block-introduction {
+	display: flex;
+	@extend %clearfix;
+
+	.col {
+		@include responsive-padding();
+		
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.col:last-child {
+		font-size: 1.2em;
+		line-height: 1.6em;
+		background: $brand-color;
+	}
+}

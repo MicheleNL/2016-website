@@ -1,0 +1,23 @@
+/* CSS Keyframe Animations
+---------------------------------*/
+@keyframes fade-in {
+	0% 		{ opacity: 0; }
+	100% 	{ opacity: 1; }
+}
+
+@keyframes fade-out {
+	0% 		{ opacity: 1; }
+	100% 	{ opacity: 0; }
+}
+
+@keyframes slide-up {
+	0% 		{ transform: translate3d(0, 100%, 0); opacity: 0; }
+	100%	{ transform: none; opacity: 1; }
+}
+
+// used for timeline dots
+@keyframes scale-in {
+	0% 		{ transform: scale(0); }
+	40% 	{ transform: scale(1.2); }
+	100% 	{ transform: scale(1); }
+}

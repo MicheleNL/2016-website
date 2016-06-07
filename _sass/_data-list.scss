@@ -1,0 +1,28 @@
+/* Table like list
+---------------------------------*/
+.data-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: center;
+	text-align: center;
+	
+	@include breakpoint(sm){
+		text-align: left;
+	}
+
+	dd, dt {
+		flex-basis: 100%;
+
+		@include breakpoint(sm){
+			flex-basis: 50%;
+		}
+	}
+
+	dt {
+		font-family: $font-sans-serif-bold;
+	}
+
+	dd {
+		margin-bottom: 1em;
+	}
+}

@@ -1,0 +1,276 @@
+/* Variables
+---------------------------------*/
+// color palette
+$teal: 				#00ffd5;
+$pink:				#ffc8c5;
+$blue-alice:		#b1c2e2;
+$blue-steel:		#89b7c6;
+$blue:				#130177;
+$gray-lighter:		#eee;
+$gray-light:		#d5d5d5;
+$gray:				#c1c1c1;
+$gray-dark:			#2a2931;
+$gray-darker:		#181920;
+
+// color usage
+$bg-color:			white;
+$brand-color:		$pink;
+$text-color:		$blue;
+
+// font properties
+$font-sans-serif:		"Karla Regular", Helvetica, Arial, sans-serif;
+$font-sans-serif-bold: 	"Circular Bold", Helvetica, Arial, sans-serif;
+$font-sans-serif-black: "Circular Black", Helvetica, Arial, sans-serif;
+$heading-font-family: 	$font-sans-serif-bold;
+$base-font-family: 		$font-sans-serif;
+$base-font-size:   		1.15em;
+$base-font-weight: 		400;
+$base-line-height: 		1.6em;
+
+// magic numbers
+$gutter-sm:	 			1.5rem;
+$gutter-md:				2rem;
+$gutter-lg:				4rem;
+$gutter-xl:				6rem;
+
+/* Basic styles of basic elements
+---------------------------------*/
+
+// reset
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote,
+dl, dd, ol, ul, figure {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// images
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+// figures
+figure > img {
+	display: block;
+}
+
+figcaption {
+	font-size: 0.8em;
+}
+
+// typography
+body {
+	background-color: $bg-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: normal;
+	font-style: normal;
+	font-size: $base-font-size;
+	color: $text-color;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "kern" on;
+}
+
+// headings & faux headings
+h1, h2, h3, h4, h5, h6,
+.alpha, .beta, .gamma, .delta, .epsilon {
+	font-family: $heading-font-family;
+	font-weight: normal;
+}
+
+// use jeremy keith's greek alphabet solution
+h1,
+.alpha {
+	font-size: 4.2em;
+	line-height: 1;
+	margin-top: 0; 
+	margin-bottom: 0;
+	font-family: $font-sans-serif-black;
+}
+
+h2, 
+.beta {
+	font-size: 1.7em;
+	line-height: 1;
+	margin-top: 0.627450980392157em;
+	margin-bottom: 0.627450980392157em;
+}
+
+h3, 
+.gamma {
+	font-size: 1.3em;
+	line-height: 1em;
+	margin-top: 1em;
+	margin-bottom: 0.3em;
+}
+
+h4, 
+.delta{
+	font-size: 1em;
+	line-height: 1.6em;
+	margin-top: 1.6em;
+	margin-bottom: 0em;
+}
+
+h5, 
+.epsilon {
+	font-size: 1em;
+	line-height: 1.6em;
+	margin-top: 1.6em;
+	margin-bottom: 0em;
+}
+
+p, ul, ol, pre, table, blockquote {
+	margin-top: 0;
+	margin-bottom: 1.6em;
+}
+
+b, strong, em, small, code {
+  line-height: 1;
+}
+
+strong, th {
+	font-weight: bold;
+}
+
+em {
+	font-weight: bold;
+}
+
+pre {
+	background: rgba($blue-steel, 0.1);
+	padding: 1em;
+	font-size: 0.8em;
+}
+
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+abbr {
+	cursor: help;
+}
+
+abbr:before {
+	background: rgba($text-color, 0.08);
+}
+
+// links
+a {
+	text-decoration: none;
+	color: $text-color;
+}
+
+// punishment for empty links
+a[href="#"] {
+	cursor: not-allowed;
+}
+
+// special underline for content links and abbreviations
+p a,
+ul a,
+dd a,
+abbr {
+	position: relative;
+	display: inline-block;
+	padding: 0 0.1em;
+	z-index: 1;
+	color: $text-color;
+
+	&:before {
+		content: "";
+		height: 0.7em;
+		width: 100%;
+		bottom: 0.1em;
+		margin-left: -0.1em;
+		display: block;
+		background: rgba($brand-color, 0.25);
+		position: absolute;
+		z-index: -1;
+		transition: all 0.15s ease-out;
+	}
+
+	@include hocus {
+		color: lighten($text-color, 15%);
+	
+		&:before {
+			height: 1.15em;
+			bottom: 0.25em;
+			transition: all 0.35s cubic-bezier(0.5, -0.5, 0.1, 1.8);
+		}
+	}
+}
+
+// lists
+ul, ol {
+	margin-left: 3em;
+}
+
+li {
+	> ul,
+	> ol {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+nav {
+	ol, 
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+}
+
+// blockquotes
+blockquote {
+	font-size: 1.3em;
+	line-height: 1;
+	font-style: italic;
+
+	> :last-of-type {
+		margin-bottom: 0.3em;
+	}
+	
+	// quote the author
+	footer {
+		font-size: 0.7em;
+		font-style: normal;
+		font-family: $font-sans-serif-black;
+	}
+
+	// deco line
+	footer:before {
+		content: "";
+		width: 1.2em;
+		border-top: 0.15em solid;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 0.3em 0.15em 0;
+	}
+}

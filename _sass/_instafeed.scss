@@ -1,0 +1,91 @@
+/* Instagram Feed
+------------------------------*/
+.instagram-feed {
+	position: relative;
+	float: left;
+	@include slide-up(50%, 0.9s, 0.1s);
+}
+
+.instagram-feed a {
+	position: relative;
+	float: left;
+	width: 50%;
+	transform: translate3d(0,0,0);
+
+	@include breakpoint(sm){
+		width: 33.33333%;
+	}
+
+	@include breakpoint(md){
+		width: 25%;
+	}
+	
+	// apply overlay on hover
+	&:after {
+		content: "•••";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2.3em;
+		color: transparent;
+		letter-spacing: -0.356em;	
+		z-index: 777;
+		pointer-events: none;
+		transition: letter-spacing 0.35s cubic-bezier(0.5, -0.5, 0.1, 2.2), background 0.5s ease;
+	}
+
+	@include hocus {
+		&:after {
+			background: $brand-color;
+			color: lighten($text-color, 15%);
+			letter-spacing: 0.25em;
+		}
+	}
+	
+	// different positioning based on screen width
+	@include breakpoint(md){
+		&:nth-of-type(1),
+		&:nth-of-type(2){
+			margin-left: 25%;
+		}
+	}
+}
+
+// instagram header positioning
+.instagram-feed header {
+	display: none;
+
+	@include breakpoint(sm){
+		position: absolute;
+		display: flex;
+		width: 33.33333%;
+		height: 100%;
+		left: 66.66666%;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background: lighten($brand-color, 3%);
+	}
+		
+	@include breakpoint(md){
+		width: 25%;
+		left: 50%;
+	}
+}
+
+.instagram-feed h3 {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: lighten($text-color, 15%);
+	text-align: center;
+	margin: 0;
+		
+	@include breakpoint(md){
+		font-size: 2em;
+	}
+}

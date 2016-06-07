@@ -1,0 +1,18 @@
+/* The Contact page
+------------------------------*/
+.contact .col {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	@include responsive-padding();
+
+	@include breakpoint(md) {
+		height: calc(100vh - 5rem);
+	}
+
+	&:first-of-type {
+		background: $brand-color;
+	}
+}

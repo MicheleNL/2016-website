@@ -1,0 +1,59 @@
+/* The main Header
+------------------------------*/
+.site-header {
+	padding: ($gutter-sm / 2) $gutter-sm;
+	font-family: $font-sans-serif-bold;
+	font-size: 0.75em;
+	
+	@include breakpoint(sm) {
+		font-size: 1.2em;
+	}
+
+	@include breakpoint(md) {
+		padding: $gutter-sm $gutter-md;
+	}
+
+	@include breakpoint(lg) {
+		padding: $gutter-md $gutter-xl;
+	}
+
+	svg {
+		height: 1.2em;
+		width: auto;
+	}
+}
+
+.site-nav {
+	float: right;
+}
+
+.site-nav li {
+	float: left;
+	list-style: none;
+
+	// Gaps between nav items, but not on the last one
+	&:last-child a {
+		margin-right: 0
+	}
+}
+
+.site-nav a {
+	border: none;
+	margin: 0 1em;
+	padding: 0;
+	color: lighten($text-color, 15%);
+	
+	&:before {
+		content: none;
+	}
+
+	// hover menu item
+	@include hocus {
+		color: lighten($text-color, 30%);
+	}
+
+	// current menu item
+	&.current:before  {
+		content: "";
+	}
+}
