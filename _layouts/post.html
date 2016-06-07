@@ -1,0 +1,31 @@
+---
+layout: default
+---
+	
+	<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+	{% if page.image.feature %}
+		<p><img class="header-image" src="/assets/images/{{ page.image.feature }}" alt="{{ page.title }}"></p>	
+	{% endif %}
+		<header>			
+			<h1 class="post-title">{{ page.title }}</h1>
+		</header>
+
+		<div itemprop="articleBody">
+			{{ content }}
+		</div>
+	</article>
+
+	<nav class="page-navigation">
+		{% if page.previous.url %}
+		<a class="prev-link" href="{{page.previous.url}}">
+			<span class="screenreader">Ga naar het vorige artikel, genaamd: </span>
+			{{page.previous.title}}
+		</a>
+		{% endif %}
+		{% if page.next.url %}
+		<a class="next-link" href="{{page.next.url}}">
+			<span class="screenreader">Ga naar het volgende artikel, genaamd: </span>
+			{{page.next.title}}
+		</a>
+		{% endif %}
+	</nav>

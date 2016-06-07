@@ -1,0 +1,51 @@
+---
+title: Website van front-end developer Michèle
+layout: default
+body_class: frontpage
+---
+	<main class="about">
+		<article class="block-introduction row">
+			<header class="col">
+				<h1>Hey,<br>hi & hello.</h1>
+			</header>
+			<div class="col">
+				<p>Ik houd van gebruiksvriendelijke en mooie websites. In 2007 ben ik dan ook als <strong>front-end web developer</strong> aan de slag gegaan bij <strong>Occhio</strong>, onwijs leuk web bureau gevestigd in Amsterdam.  </p>
+			</div>
+		</article>
+		<section class="row "> 
+			<div class="col">
+				<p class="beta">inmiddels...</p>
+				<p>Heb ik als front-end developer veel ervaring met het vertalen van ontwerpen naar <strong>mooie</strong>, <strong>snelle</strong> & toegankelijke websites.</p>
+				<p>Nadenken over hoe <strong>responsive</strong> sites horen te werken en het toevoegen van <em>CSS animaties & transities</em>, vind ik het leukst om te doen.</p>
+
+				<p>Sinds 2015 geef ik af en toe les, aan de Hogeschool van Amsterdam. Tijdens deze lessen leren CMD-studenten hoe gaaf front-end development wel niet is.</p>
+			</div>
+			<div class="col">
+				<p>Binnen het vakgebied ben ik een wandelend cliché: ik houd van lekkere koffie én katten. Gelukkig ben ik geen ninja, of een unicorn.</p>
+				<h3>En verder?</h3>
+				<p>Verder ben ik gek op Scandinavische detectives, spekkoek, concerten, vegetarisch voedsel, onze kat <a href="https://www.instagram.com/p/BFPPT1OtpQ_/">Saai</a>, speuren naar vintage meubels, horror- en arthouse films, een lekker potje metal en <em>Monkey Island™</em>.</p>
+				<a href="/werk/" role="button">Bekijk Werk</a>
+				<a href="/curriculum-vitae/" role="button">Bekijk CV</a>
+			</div>
+		</section>
+	</main>
+
+	<!-- instafeed, only load on this page - https://github.com/stevenschobert/instafeed.js -->
+	<script src="{{ '/assets/js/instafeed.min.js' | prepend: site.baseurl }}"></script>
+
+	<script>
+		var feed = new Instafeed({
+			get: 'user',
+			userId: '5178492',
+			limit: '2',
+			resolution: 'standard_resolution',
+			clientId: 'eb668ef33a0a4bad847094d14e87c973',
+			accessToken: '5178492.1677ed0.e1e4164d9af141b6bb62d00bd7b3d7d1'
+		});
+		feed.run();
+	</script>
+	<section id="instafeed" class="instagram-feed">
+		<header>
+			<h3 class="beta">Instagram</h3>
+		</header>
+	</section>

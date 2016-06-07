@@ -1,0 +1,26 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Michèle
+email: mail@michele.nl
+description: Michèle studeerde Interactieve Media (CMD) aan de Hogeschool van Amsterdam en werkt inmiddels zo'n 9 jaar bij Occhio. Sinds eind 2009 is Michèle werkzaam als senior front-end developer.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.michele.nl" # the base hostname & protocol for your site
+twitter_username: michelenl
+github_username:  michelevdaardweg
+
+sass:
+    sass_dir: _sass
+
+# Build settings
+markdown: kramdown
+
+gems:
+  - octopress-autoprefixer
+sass:
+  style: :compressed
