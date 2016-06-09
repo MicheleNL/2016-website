@@ -49,19 +49,23 @@
 		}
 
 		article {
-			transform: translate3d(2em, 0, 0);
-			opacity: 0;
-			will-change: transform, opacity;
+			// if supported
+			.js &,
+			.cssanimations & {
+				transform: translate3d(2em, 0, 0);
+				opacity: 0;
+				will-change: transform, opacity;
 
-			// when in viewport
-			&.animate {
-				transform: translate3d(0, 0, 0);
-				transition: all 0.75s 0.2s ease;
-				opacity: 1;
+				// when in viewport
+				&.animate {
+					transform: translate3d(0, 0, 0);
+					transition: all 0.75s 0.2s ease;
+					opacity: 1;
+				}
 			}
 		}
-	
-		// animate lines 
+
+		//  animate lines 
 		&.animate:before {
 			height: calc(100% - 14px);
 			transition: all 0.8s 0.15s;
@@ -78,12 +82,17 @@
 			position: absolute;
 			top:  1.85em;
 			left: -6px;
-			transform: scale(0);
-			
-			// animate dots 
-			&.animate {
-				animation: scale-in 0.6s 0.15s forwards;
-				animation-timing-function: cubic-bezier(0.53, 0.08, 0.07, 1.22);
+
+			// if supported
+			.js &,
+			.cssanimations & {
+				transform: scale(0);
+				
+				// animate dots 
+				&.animate {
+					animation: scale-in 0.6s 0.15s forwards;
+					animation-timing-function: cubic-bezier(0.53, 0.08, 0.07, 1.22);
+				}
 			}
 		}
 	}
