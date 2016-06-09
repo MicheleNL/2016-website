@@ -2,10 +2,10 @@
 		<a class="site-title" href="{{ site.baseurl }}/">Michèle.nl</a>
 		<nav class="site-nav">
 			{% assign current = page.url | downcase | split: '/' %}
-			  <ul>
-			    <li><a href="/"{% if current[1] == "/"" %} class="current" {% endif %}>Hello</a></li>
-			    <li><a href="/werk/"{% if current[1] == "werk" %} class="current"{% endif %}>Werk</a></li>
-			    <li><a href="/contact/"{% if current[1] == "contact" %} class="current"{% endif %}>Contact</a></li>
-			  </ul>
+			<ul>
+				<li><a href="/"{% if current[1] == "/"" %} class="current" {% endif %}>Hello</a></li>
+				<li><a href="/werk/"{% if current[1] == "werk" %} class="current"{% endif %}>Werk</a></li>
+				<li><a href="/contact/"{% if current[1] == "contact" %} class="current"{% endif %}>Contact</a></li>
+			</ul>
 		</nav>
 	</header>
