@@ -1,7 +1,7 @@
 // generic block module
 .block-item {
 	position: relative;
-	
+
 	// mobile first - change order with flexbox
 	@include breakpoint(md) {
 		&:nth-child(even) .col:nth-child(1) {
@@ -12,12 +12,13 @@
 	// overlay effect on hover
 	@include hocus {
 		.block-item-img {
-			filter: none;
+			filter: none;	
+			transition-timing-function: ease-out;
 		}
 
 		.block-item-img:before {
-			background: rgba($text-color, 0.3);
-			transition: all 0.5s ease-in;
+			opacity: 0.3;
+			transition-timing-function: ease-out;
 		}
 	}
 }
@@ -69,14 +70,14 @@
 // block items with background images
 .block-item-img  {
 	position: relative;
-	display: block;
 	width: 100%;
 	min-height: 10em;
-	filter: grayscale(50%);
-	transition: all 0.3s ease-in;
 	background-color: $text-color;
 	background-size: cover;
 	background-position: center bottom;
+	filter: grayscale(50%);
+	transform: translate3d(0,0,0); // for cpu acc.
+	transition: filter 1.1s ease-in;
 
 	// larger images on bigger screens
 	@include breakpoint(md){
@@ -86,15 +87,13 @@
 // semi trans layer
 .block-item-img:before {
 	content: "";
-	background: rgba($text-color, 0.7);
-	width: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	transition: all 0.3s ease-out;
-	//mix-blend-mode: multiply;
+	background: rgba($text-color, 0.7);
+	transition: opacity 1.1s ease-in;
 }
 
 // apply text-shadow for readability

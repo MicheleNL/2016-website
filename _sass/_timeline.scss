@@ -34,19 +34,21 @@
 		// line, except for last line
 		&:not(:last-of-type):before {
 			content: "";
-			width: 0.05em;
-			display: block;
-			left: -0.05em;
-			top: 2.5em;
 			position: absolute;
+			display: block;
+			top: 2.5em;
+			left: -0.05em;
+			width: 0.05em;
+			height: calc(100% - 14px);		
 			background: $brand-color;
-			height: 0%;
+			transform: scaleY(0);
+			transform-origin: center top;
 		}
 
 		//  animate lines 
 		&.animate:before {
-			height: calc(100% - 14px);
-			transition: all 0.8s 0.15s;
+			transform: scaleY(1);
+			transition: transform 0.8s 0.15s;
 		}	
 	}
 
@@ -63,8 +65,8 @@
 			// when in viewport
 			&.animate {
 				transform: translate3d(0, 0, 0);
-				transition: all 0.75s 0.2s ease;
 				opacity: 1;
+				transition: transform 0.75s 0.2s ease, opacity 0.75s 0.2s ease;
 			}
 		}
 	}
@@ -95,7 +97,7 @@
 			
 			// animate dots 
 			&.animate {
-				animation: scale-in 0.6s 0.15s forwards;
+				animation: scale-in 0.6s 0.32s forwards;
 				animation-timing-function: cubic-bezier(0.53, 0.08, 0.07, 1.22);
 			}
 		}

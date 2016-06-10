@@ -10,8 +10,8 @@
 	}
 
 	&.animate img {
-		transition: all 1.1s ease;
 		opacity: 1;
+		transition: opacity 1.1s ease;
 	}
 
 	+ h2, 

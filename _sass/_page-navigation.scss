@@ -28,6 +28,7 @@
 		vertical-align: middle;
 		margin-left: 2em;
 		fill: currentColor;
+		transition: transform 0.1s, opacity 0.3s;
 	}	
 }
 
@@ -36,6 +37,7 @@
 	position: relative;
 }
 
+// line
 .next-link:after {
 	content: "";
 	width: 0.05em;
@@ -43,7 +45,7 @@
 	position: absolute;
 	top: 50%;
 	left: 0;
-	transform: translate(-50%, -50%);
+	transform: translate3d(-50%, -50%, 0);
 	display: block;
 	background: $text-color;
 }
@@ -52,24 +54,28 @@
 	text-align: left;
 }
 
-.prev-link svg,
-.next-link svg {
-	transition: margin 0.1s;
+.prev-link {
+	svg {
+		transform: rotate(-180deg) translate3d(0.4em, -0.07em, 0);
+	}
+
+	@include hocus {
+		svg { 
+			transform: rotate(-180deg) translate3d(2.4em, -0.07em, 0);	
+			opacity: 0;
+		}
+	}
 }
 
-.prev-link svg {
-	margin: -0.1em 0.4em 0 0;
-	transform: rotate(-180deg);	
-}
+.next-link {
+	svg {
+		transform: translate3d(-1.4em, -0.07em, 0);	
+	}
 
-.next-link svg {
-	margin: -0.1em 0 0 0.4em;
-}
-
-.prev-link:hover svg {
-	margin-right: 1em;
-}
-
-.next-link:hover svg {
-	margin-left: 1em;   
+	@include hocus {
+		svg {
+			transform: translate3d(0.4em, -0.07em, 0);
+			opacity: 0;
+		}
+	}
 }

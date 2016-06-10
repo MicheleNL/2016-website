@@ -210,24 +210,23 @@ abbr {
 
 	&:before {
 		content: "";
-		height: 0.7em;
+		height: 1em;
 		width: 100%;
-		bottom: 0.1em;
-		margin-left: -0.1em;
 		display: block;
 		background: rgba($brand-color, 0.25);
 		position: absolute;
+		bottom: 0;
+		left: 0;
 		z-index: -1;
-		transition: all 0.15s ease-out;
+		transform: scaleY(0.6) translateY(-0.15em);
+		transform-origin: center bottom;
+		transition: transform 0.15s ease-out;
 	}
 
 	@include hocus {
-		color: lighten($text-color, 15%);
-	
 		&:before {
-			height: 1.15em;
-			bottom: 0.25em;
-			transition: all 0.35s cubic-bezier(0.5, -0.5, 0.1, 1.8);
+			transform: scaleY(1) translateY(-0.3em);
+			transition: transform 0.35s cubic-bezier(0.5, -0.5, 0.1, 1.8);
 		}
 	}
 }

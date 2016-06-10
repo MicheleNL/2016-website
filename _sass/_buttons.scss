@@ -12,11 +12,11 @@ button,
 	font-weight: normal;
 	line-height: 2;
 	color: $text-color; 
-	padding: 0.15em 4em 0.23em 1.5em;
+	padding: 0.15em 4em 0.3em 1.5em;
 	cursor: pointer;
 	text-transform: lowercase;
 	margin-bottom: 1.5em;
-	transition: 0.3s;
+	transition: all 0.3s;
 		
 	@include breakpoint(sm){	
 		// apply a little margin if > 1 button
@@ -32,7 +32,7 @@ button,
 
 		svg {
 			opacity: 0;
-			right: -$arrow-width;
+			transform: translateX($arrow-width);
 		}
 	}
 	
@@ -42,11 +42,12 @@ button,
 	}
 
 	svg {
+		width: $arrow-width;
 		position: absolute;
 		top: 0.38em;
-		width: $arrow-width;
-		right: $arrow-width;
+		right: 0;
 		fill: currentColor;
+		transform: translateX(-$arrow-width);
 		transition: 0.3s;
 	}	
 }

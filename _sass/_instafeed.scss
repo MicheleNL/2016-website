@@ -35,19 +35,21 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background: $brand-color;
+		color: lighten($text-color, 15%);
 		font-size: 2.3em;
-		color: transparent;
 		letter-spacing: -0.356em;	
 		z-index: 777;
 		pointer-events: none;
-		transition: letter-spacing 0.35s cubic-bezier(0.5, -0.5, 0.1, 2.2), background 0.5s ease;
+		opacity: 0;
+		transition: letter-spacing 0s linear, opacity 0.6s ease-out;
 	}
 
 	@include hocus {
 		&:after {
-			background: $brand-color;
-			color: lighten($text-color, 15%);
+			opacity: 1;
 			letter-spacing: 0.25em;
+			transition: letter-spacing 0.35s cubic-bezier(0.5, -0.5, 0.1, 2.2), opacity 0.5s ease;
 		}
 	}
 	
