@@ -28,23 +28,15 @@ layout: default
 			</div>
 		</section>
 	</main>
-
-	<!-- instafeed, only load on this page - https://github.com/stevenschobert/instafeed.js -->
-	<script async src="{{ '/assets/js/instafeed.min.js' | prepend: site.baseurl }}"></script>
-
-	<script>
-		var feed = new Instafeed({
-			get: 'user',
-			userId: '5178492',
-			limit: '2',
-			resolution: 'standard_resolution',
-			clientId: 'eb668ef33a0a4bad847094d14e87c973',
-			accessToken: '5178492.1677ed0.e1e4164d9af141b6bb62d00bd7b3d7d1'
-		});
-		feed.run();
-	</script>
-	<section id="instafeed" class="instagram-feed">
+	<section class="instagram-feed">
 		<header>
 			<h3 class="beta">Instagram</h3>
 		</header>
+		<a href="https://www.instagram.com/p/uyqhRXtpcc/?taken-by=michelevda">
+			<img src="/assets/images/instagram-picture-1.jpg" alt="Foto van de kat van Michèle op Instagram">
+		</a>
+		
+		<a href="https://www.instagram.com/p/uTTLjfNpbx/?taken-by=michelevda">
+			<img src="/assets/images/instagram-picture-2.jpg" alt="Foto van de schoenen van Michèle op Instagram">
+		</a>
 	</section>
