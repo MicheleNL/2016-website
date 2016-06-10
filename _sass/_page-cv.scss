@@ -11,16 +11,18 @@
 	.col {
 		@include responsive-padding();
 	}
+
+	@include hocus {
+		header.block-item-img {
+			filter: none;
+		}
+	}
 }
 
 // quotes 
 .quotes {
 	background: $brand-color;
 	@include responsive-padding();
-}
-
-.quotes img {
-	filter: grayscale(100%);
 }
 
 .quotes	blockquote:last-of-type {
