@@ -72,13 +72,10 @@
 	width: 100%;
 	min-height: 10em;
 	filter: grayscale(50%);
-	will-change: opacity;
 	transition: all 0.3s ease-in;
-	background: {
-		color: $text-color;
-		size: cover;
-		position: center bottom;
-	}
+	background-color: $text-color;
+	background-size: cover;
+	background-position: center bottom;
 
 	// larger images on bigger screens
 	@include breakpoint(md){
@@ -96,7 +93,7 @@
 	right: 0;
 	bottom: 0;
 	transition: all 0.3s ease-out;
-	mix-blend-mode: multiply;
+	//mix-blend-mode: multiply;
 }
 
 // apply text-shadow for readability
