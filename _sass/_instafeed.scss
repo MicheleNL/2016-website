@@ -42,7 +42,7 @@
 		z-index: 777;
 		pointer-events: none;
 		opacity: 0;
-		transition: letter-spacing 0s 1s linear, opacity 0.3s ease-out;
+		transition: letter-spacing 0s 0.35s linear, opacity 0.3s ease-out;
 	}
 
 	@include hocus {
