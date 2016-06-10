@@ -32,11 +32,19 @@
 }
 
 // mixin for easier media queries
+$breakpoint-xl:		67em;
 $breakpoint-lg:		60em;
-$breakpoint-md:		55em;
+$breakpoint-md:		50em;
 $breakpoint-sm:		30em;
 
 @mixin breakpoint($viewport) {
+	// extra large
+	@if $viewport == xl {
+		@media (min-width: $breakpoint-xl) { 				
+			@content; 
+		}
+	}
+
 	// large
 	@if $viewport == lg {
 		@media (min-width: $breakpoint-lg) { 				
@@ -84,6 +92,10 @@ $breakpoint-sm:		30em;
 	}
 
 	@include breakpoint(lg) {
+		padding: $gutter-lg;
+	}
+
+	@include breakpoint(xl) {
 		padding: $gutter-xl;
 	}
 }

@@ -13,7 +13,7 @@ $gray-dark:		#555;
 $gray-darker:		#181920;
 
 // color usage
-$bg-color:		white;
+$bg-color:		#fff;
 $brand-color:		$pink;
 $text-color:		$blue;
 
@@ -105,9 +105,13 @@ h1,
 	@include breakpoint(sm){
 		font-size: 4.2em;
 	}
-
-	@include breakpoint(lg){
+	
+	@include breakpoint(md){
 		font-size: 4.5em;
+	}
+
+	@include breakpoint(xl){
+		font-size: 7em;
 	}
 }
 

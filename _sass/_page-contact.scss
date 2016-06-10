@@ -1,5 +1,11 @@
 /* The Contact page
 ------------------------------*/
+.contact h1 {
+	@include breakpoint(xl){
+		font-size: 5.3em;
+	}
+}
+
 .contact .col {
 	display: flex;
 	flex-wrap: wrap;
