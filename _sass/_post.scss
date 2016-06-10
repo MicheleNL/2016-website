@@ -21,10 +21,9 @@
 	}
 	
 	div > p:first-of-type:not(.image-container) {
+		font-family: $font-sans-serif-italic;
 		font-size: 1.3em;
 		line-height: 1.3;
-		letter-spacing: -0.01em;
-		font-style: italic;
 	}
 }
 

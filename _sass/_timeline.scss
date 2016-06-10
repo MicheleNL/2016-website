@@ -70,10 +70,10 @@
 	}
 
 	p {
+		font-family: $font-sans-serif-italic;
 		color: lighten($text-color, 12%);
-		margin: 0;
-		font-style: italic;
 		line-height: 1.2;
+		margin: 0;
 	}
 
 	// dots on lines

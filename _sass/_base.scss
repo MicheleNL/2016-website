@@ -19,6 +19,7 @@ $text-color:		$blue;
 
 // font properties
 $font-sans-serif:	"Karla Regular", Helvetica, Arial, sans-serif;
+$font-sans-serif-italic: 	"Karla Italic", Helvetica, Arial, sans-serif;
 $font-sans-serif-bold: 	"Circular Bold", Helvetica, Arial, sans-serif;
 $font-sans-serif-black: "Circular Black", Helvetica, Arial, sans-serif;
 $heading-font-family: 	$font-sans-serif-bold;
@@ -257,9 +258,9 @@ nav {
 
 // blockquotes
 blockquote {
+	font-family: $font-sans-serif-italic;
 	font-size: 1.3em;
 	line-height: 1;
-	font-style: italic;
 
 	> :last-of-type {
 		margin-bottom: 0.3em;
