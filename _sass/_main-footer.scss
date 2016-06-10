@@ -28,7 +28,7 @@
 }
 
 .site-footer a {
-	color: $gray;
+	color: lighten($gray-dark, 20%);
 	margin-left: 1.2em;
 
 	@include breakpoint(sm) {
@@ -40,7 +40,7 @@
 	}
 
 	@include hocus {
-		color: lighten($gray, 5%);
+		color: lighten($gray-dark, 25%);
 	}
 }
 
