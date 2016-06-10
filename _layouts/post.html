@@ -1,20 +1,21 @@
 ---
 layout: default
 ---
-	
 	<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
 	{% if page.image.feature %}
-		<p><img class="header-image" src="/assets/images/{{ page.image.feature }}" alt="{{ page.title }}"></p>	
+		<div class="image-container">
+			<div class="image-frame">
+				<img class="header-image" src="/assets/images/{{ page.image.feature }}" alt="{{ page.title }}">
+			</div>
+		</div>	
 	{% endif %}
 		<header>			
 			<h1 class="post-title">{{ page.title }}</h1>
 		</header>
-
 		<div itemprop="articleBody">
 			{{ content }}
 		</div>
 	</article>
-
 	<nav class="page-navigation">
 		{% if page.previous.url %}
 		<a class="prev-link" href="{{page.previous.url}}">

@@ -40,12 +40,10 @@ $(function() {
 });
 
  
-/* Break images out of container
+/* Full width imgs
 ----------------------------------*/
 $(function() {
-	// if article image is a paragraph child, add class
-	$("article img:not('.full-width')").closest("p").addClass('image-container');
-
+	
 	// full width images: call resize function on window resize
 	if($(".full-width").length > 0) {
 		$(window).resize(function(){
@@ -56,7 +54,6 @@ $(function() {
 	$(window).load(function () {
 		ResizeFullWidthImages();
 	});
-
 
 	function ResizeFullWidthImages() {
 		// determine viewport width
@@ -79,19 +76,14 @@ $(function() {
 			$(this).css("height", "auto");
 		});
 	}
-
-	// to create special fade-in effect, wrapper is needed
-	$(".image-container img").wrap("<div class='img-frame'></div>");
 });
-
-
  
 /* InView jQuery plugin
 ------------------------------*/
 // https://github.com/protonet/jquery.inview
 !function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){function i(){var b,c,d={height:f.innerHeight,width:f.innerWidth};return d.height||(b=e.compatMode,(b||!a.support.boxModel)&&(c="CSS1Compat"===b?g:e.body,d={height:c.clientHeight,width:c.clientWidth})),d}function j(){return{top:f.pageYOffset||g.scrollTop||e.body.scrollTop,left:f.pageXOffset||g.scrollLeft||e.body.scrollLeft}}function k(){if(b.length){var e=0,f=a.map(b,function(a){var b=a.data.selector,c=a.$element;return b?c.find(b):c});for(c=c||i(),d=d||j();e<b.length;e++)if(a.contains(g,f[e][0])){var h=a(f[e]),k={height:h[0].offsetHeight,width:h[0].offsetWidth},l=h.offset(),m=h.data("inview");if(!d||!c)return;l.top+k.height>d.top&&l.top<d.top+c.height&&l.left+k.width>d.left&&l.left<d.left+c.width?m||h.data("inview",!0).trigger("inview",[!0]):m&&h.data("inview",!1).trigger("inview",[!1])}}}var c,d,h,b=[],e=document,f=window,g=e.documentElement;a.event.special.inview={add:function(c){b.push({data:c,$element:a(this),element:this}),!h&&b.length&&(h=setInterval(k,250))},remove:function(a){for(var c=0;c<b.length;c++){var d=b[c];if(d.element===this&&d.data.guid===a.guid){b.splice(c,1);break}}b.length||(clearInterval(h),h=null)}},a(f).bind("scroll resize scrollstop",function(){c=d=null}),!g.addEventListener&&g.attachEvent&&g.attachEvent("onfocusin",function(){d=null})});
 
-var animElements = $('h1, h2, h3, .instagram-feed, .current, .col, .time-dot, .timeline dd, .timeline dd article, .post img, .image-container img, .table-list dd');
+var animElements = $('h1, h2, h3, .instagram-feed, .current, .col, .time-dot, .timeline dd, .timeline dd article, .image-container, .table-list dd');
 
 // fade up elements in view
 $(animElements).on('inview', function(event, isInView) {
