@@ -61,6 +61,7 @@
 		&:hover:before,
 		&.active:before {
 			height: 9px;
+			transform: translate3d(0, -50%, 0);
 			background: $brand-color;
 			border-color: $brand-color;
 		}
