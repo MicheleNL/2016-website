@@ -9,6 +9,7 @@
     ExpiresByType application/x-javascript "access plus 1 week"
     ExpiresByType image/x-icon "access plus 1 year"
     ExpiresByType application/x-font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
 </IfModule>
 
 FileETag INode MTime Size
