@@ -122,7 +122,7 @@ $(function() {
 
 	// no scrolling yet
 	var	scrolling 			= false;
-	var contentSections 	= $('.cv section');
+	var contentSections 	= $('.cv-section');
 	var verticalNavigation 	= $('.jump-menu');
 	var navigationItems 	= verticalNavigation.find('a');
 
