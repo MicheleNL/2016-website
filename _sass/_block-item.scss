@@ -56,13 +56,13 @@
 
 	h3 {
 		font-size: 1.1em;
-		font-family: $font-sans-serif;
+		font-family: $font-sans-serif-italic;
 		color: lighten($text-color, 13%);
 		text-transform: lowercase;
 		@include slide-up(100%, 0.9s, 0.1s);
 
 		&.animate {
-			margin-top: 0.8em;
+			margin-top: 0.75em;
 		}	
 	}
 }
