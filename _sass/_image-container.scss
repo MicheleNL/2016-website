@@ -87,7 +87,7 @@ p {
 			top: -0.5em;
 			left: $gutter-xl;
 			border-left: 0.09rem solid;
-			height: 100%;
+			height: calc(100% + 0.33em);
 		}
 	}	
 }
