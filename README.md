@@ -6,6 +6,7 @@ http://www.michele.nl/
 ###built with:
 
 * Jekyll
-* HTML5
+* Gulp
 * Sass
+* HTML5
 * Liquid
