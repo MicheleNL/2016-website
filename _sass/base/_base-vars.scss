@@ -4,12 +4,12 @@
 $teal: 			#b2f6eb;
 $pink:			#ffdcd0;
 $blue:			#1F2677;
-$blue-soft:			#415892;
+$blue-soft:		#415892;
 $gray-lighter:		#e6e9ed;
-$gray-light:		#D5D5E5;
-$gray:			#C1C1D0;
-$gray-dark:		#555566;
-$gray-darker:		#181931;
+$gray-light:		#dadae5;
+$gray:			#c5c5cf;
+$gray-dark:		#5c5c69;
+$gray-darker:		#252633;
 
 // color usage
 $bg-color:		#fff;
@@ -32,3 +32,9 @@ $gutter-sm: 		1.5rem;
 $gutter-md: 		2rem;
 $gutter-lg: 		4rem;
 $gutter-xl: 		6rem;
+
+// breakpoints
+$breakpoint-xl:		67em;
+$breakpoint-lg:		60em;
+$breakpoint-md:		50em;
+$breakpoint-sm:		30em;

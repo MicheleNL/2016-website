@@ -9,11 +9,6 @@
 }
 
 // mixin for easier media queries
-$breakpoint-xl:		67em;
-$breakpoint-lg:		60em;
-$breakpoint-md:		50em;
-$breakpoint-sm:		30em;
-
 @mixin breakpoint($viewport) {
 	// extra large
 	@if $viewport == xl {
