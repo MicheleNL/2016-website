@@ -14,13 +14,5 @@ url: "http://www.michele.nl" # the base hostname & protocol for your site
 twitter_username: michelenl
 github_username:  michelevdaardweg
 
-sass:
-    sass_dir: _sass
-
 # Build settings
 markdown: kramdown
-
-gems:
-  - octopress-autoprefixer
-sass:
-  style: :compressed

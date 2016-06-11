@@ -1,0 +1,21 @@
+/* Helpers: placeholders
+---------------------------------*/
+
+// clearfix
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// screenreader text
+.screenreader {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
