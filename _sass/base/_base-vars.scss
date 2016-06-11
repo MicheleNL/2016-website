@@ -1,0 +1,35 @@
+/* Variables
+---------------------------------*/
+// color palette
+$teal: 			#00ffd5;
+$pink:			#ffc8c5;
+$blue-alice:		#b1c2e2;
+$blue-steel:		#89b7c6;
+$blue:			#2c3877;
+$gray-lighter:		#eee;
+$gray-light:		#d5d5d5;
+$gray:			#c1c1c1;
+$gray-dark:		#555;
+$gray-darker:		#181920;
+
+// color usage
+$bg-color:		#fff;
+$brand-color:		$pink;
+$text-color:		$blue;
+
+// font properties
+$font-sans-serif:	"Karla Regular", Helvetica, Arial, sans-serif;
+$font-sans-serif-italic: 	"Karla Italic", Helvetica, Arial, sans-serif;
+$font-sans-serif-bold: 	"Circular Bold", Helvetica, Arial, sans-serif;
+$font-sans-serif-black: "Circular Black", Helvetica, Arial, sans-serif;
+$heading-font-family: 	$font-sans-serif-bold;
+$base-font-family: 	$font-sans-serif;
+$base-font-size:   	1.15em;
+$base-font-weight: 	400;
+$base-line-height: 	1.6em;
+
+// magic numbers
+$gutter-sm: 		1.5rem;
+$gutter-md: 		2rem;
+$gutter-lg: 		4rem;
+$gutter-xl: 		6rem;
