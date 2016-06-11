@@ -60,6 +60,8 @@ gulp.task('scripts', function() {
   return gulp.src('_js/*.js')
 	.pipe(concat('scripts.js'))
 	.pipe(uglify())
+	.pipe(gulp.dest('_site/js'))
+	.pipe(browserSync.reload({stream:true}))
 	.pipe(gulp.dest('js'));
 });
 
@@ -69,6 +71,7 @@ gulp.task('scripts', function() {
  */
 gulp.task('watch', function () {
 	gulp.watch('_sass/**/*.scss', ['sass']);
+	gulp.watch('_js/**/*.js', ['scripts']);
 	gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
 });
 
@@ -76,4 +79,4 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files & concat scripts.
  */
-gulp.task('default', ['browser-sync', 'watch', 'scripts']);
+gulp.task('default', ['browser-sync', 'watch']);
