@@ -2,9 +2,9 @@
 ---------------------------------*/
 
 // reset
-body, h1, h2, h3, h4, h5, h6,
+body, h1, h2, h3, h4, h5,
 p, blockquote,
-dl, dd, ol, ul, figure {
+dl, dd, ol, ul {
 	margin: 0;
 	padding: 0;
 }
@@ -25,13 +25,9 @@ img {
 	vertical-align: middle;
 }
 
-// figures
-figure > img {
-	display: block;
-}
-
-figcaption {
-	font-size: 0.8em;
+::selection { 
+	background: $teal;
+	color: $text-color; 
 }
 
 // typography
@@ -111,39 +107,22 @@ h5,
 	margin-bottom: 0em;
 }
 
-p, ul, ol, pre, table, blockquote {
+p, ul, ol, blockquote {
 	margin-top: 0;
 	margin-bottom: 2rem;
 }
 
-b, strong, em, small, code {
+b, strong, em, small {
   line-height: 1;
 }
 
-strong, th {
+strong {
 	font-weight: bold;
 }
 
 em {
 	font-family: $font-sans-serif-italic;
 	font-weight: bold;
-}
-
-pre {
-	background: rgba($blue-steel, 0.1);
-	padding: 1em;
-	font-size: 0.8em;
-}
-
-sup {
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
 }
 
 abbr {

@@ -41,7 +41,6 @@
 	border: none;
 	margin: 0 1em;
 	padding: 0;
-	color: lighten($text-color, 15%);
 	
 	&:before {
 		content: none;
@@ -49,7 +48,7 @@
 
 	// hover menu item
 	@include hocus {
-		color: lighten($text-color, 30%);
+		color: lighten($text-color, 10%);
 	}
 
 	// current menu item
