@@ -1,14 +1,14 @@
-var gulp        = require('gulp');
+var gulp 		= require('gulp');
 var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var sassGlob    = require('gulp-sass-glob');
-var prefix      = require('gulp-autoprefixer');
+var sass 		= require('gulp-sass');
+var sassGlob 	= require('gulp-sass-glob');
+var prefix 		= require('gulp-autoprefixer');
 var	concat 		= require('gulp-concat');
 var	uglify 		= require('gulp-uglify');
-var cp          = require('child_process');
+var cp 			= require('child_process');
 
-var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-var messages = {
+var jekyll 		= process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+var messages 	= {
 	jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
@@ -58,9 +58,9 @@ gulp.task('sass', function () {
 
 gulp.task('scripts', function() {
   return gulp.src('_js/*.js')
-    .pipe(concat('scripts.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('js'));
+	.pipe(concat('scripts.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('js'));
 });
 
 /**
@@ -74,6 +74,6 @@ gulp.task('watch', function () {
 
 /**
  * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
+ * compile the jekyll site, launch BrowserSync & watch files & concat scripts.
  */
 gulp.task('default', ['browser-sync', 'watch', 'scripts']);
