@@ -5,12 +5,25 @@ var sassGlob		= require('gulp-sass-glob');
 var prefix		= require('gulp-autoprefixer');
 var concat		= require('gulp-concat');
 var uglify		= require('gulp-uglify');
+var notify 		= require('gulp-notify');
 var cp			= require('child_process');
 
 var jekyll		= process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages		= {
 	jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
+
+/**
+ * Handle errors with Gulp Notify
+ */
+function handleErrors() {
+	var args = Array.prototype.slice.call(arguments);
+	notify.onError({
+		title: 'Compile Error',
+		message: '<%= error.message %>'
+	}).apply(this, args);
+	this.emit('end'); // Keep gulp from hanging on this task
+}
 
 /**
  * Build the Jekyll Site
@@ -44,22 +57,27 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  */
 gulp.task('sass', function () {
 	return gulp.src('_sass/main.scss')
+	    
 		.pipe(sassGlob())
 		.pipe(sass({
 			includePaths: ['scss'],
 			outputStyle: 'compressed',
-			onError: browserSync.notify
 		}))
+		.on('error', handleErrors)
 		.pipe(prefix(['last 3 versions', '> 1%'], { cascade: true }))
 		.pipe(gulp.dest('_site/css'))
 		.pipe(browserSync.reload({stream:true}))
 		.pipe(gulp.dest('css'));
 });
 
+/**
+ * Concat, minify and check errors on JS files
+ */
 gulp.task('scripts', function() {
   return gulp.src('_js/*.js')
 	.pipe(concat('scripts.js'))
 	.pipe(uglify())
+	 .on('error', handleErrors)
 	.pipe(gulp.dest('_site/js'))
 	.pipe(browserSync.reload({stream:true}))
 	.pipe(gulp.dest('js'));
