@@ -57,7 +57,6 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  */
 gulp.task('sass', function () {
 	return gulp.src('_sass/main.scss')
-	    
 		.pipe(sassGlob())
 		.pipe(sass({
 			includePaths: ['scss'],
@@ -77,7 +76,7 @@ gulp.task('scripts', function() {
   return gulp.src('_js/*.js')
 	.pipe(concat('scripts.js'))
 	.pipe(uglify())
-	 .on('error', handleErrors)
+	.on('error', handleErrors)
 	.pipe(gulp.dest('_site/js'))
 	.pipe(browserSync.reload({stream:true}))
 	.pipe(gulp.dest('js'));
