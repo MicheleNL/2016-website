@@ -48,7 +48,7 @@
 		//  animate lines 
 		&.animate:before {
 			transform: scaleY(1);
-			transition: transform 0.8s 0.15s;
+			transition: transform 0.8s 0.5s;
 		}	
 	}
 
@@ -93,12 +93,11 @@
 		// if supported
 		.js &,
 		.cssanimations & {
-			transform: scale(0);
+			transform: scale(0.1);
 			
 			// animate dots 
 			&.animate {
-				animation: scale-in 0.6s 0.3s forwards;
-				animation-timing-function: cubic-bezier(0.53, 0.08, 0.07, 1.22);
+				animation: scale-in 0.6s 0.4s forwards cubic-bezier(0.53, 0.08, 0.07, 1.22);
 			}
 		}
 	}

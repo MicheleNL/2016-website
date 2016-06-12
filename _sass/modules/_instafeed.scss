@@ -3,11 +3,7 @@
 .instagram-feed {
 	position: relative;
 	float: left;
-	@include slide-up(15%, 0.9s, 0.1s);
-
-	.no-js & {
-		display: none;
-	}
+	@include slide-up(15%, 0.9s, 0.1s);	
 }
 
 .instagram-feed > a {
@@ -70,26 +66,89 @@
 
 	@include breakpoint(sm){
 		position: absolute;
-		display: flex;
+		left: 66.66666%;
 		width: 33.33333%;
 		height: 100%;
-		left: 66.66666%;
+		display: flex;
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
-		background: lighten($brand-color, 3%);
 	}
 		
 	@include breakpoint(md){
 		width: 25%;
-		left: 50%;
+		left: 50%;	
+	}
+
+	// make flipper on bigger screens
+	@include breakpoint(xl){
+		perspective: 80em;
+		z-index: 2;
+
+		@include hocus {
+
+			.front, 
+			.back {
+				transition: transform 1s cubic-bezier(.29, 1.4, .86, 1.06);
+			}
+
+			.front {
+			    transform: rotateY(180deg);
+			}
+
+			.back {
+				transform: rotateY(0deg);
+			}
+
+			[role=button] {
+				opacity: 1;
+				transition: opacity 1s 0.4s, padding 0.3s;
+			}
+		}
 	}
 }
+
+// flipper panes
+.front, 
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: stretch;
+	flex-direction: column;
+	justify-content: center;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition: transform 1s cubic-bezier(.29, 1, .86, 1);
+}
+
+/*  front pane */
+.front {
+	background: lighten($brand-color, 3%);
+	transform: rotateY(0deg);
+}
+
+/* back pane */
+.back {
+	background: $text-color;
+	transform: rotateY(-180deg);
+}
+
+// button on back pane
+.back [role=button] {
+	align-self: center;
+	margin: 0;
+	opacity: 0;
+	transition: opacity 0.15s 0s, padding 0.3s;
+}
+
 
 .instagram-feed h3 {
 	font-size: 1.4em;
 	text-align: center;
-	margin: 0;
 		
 	@include breakpoint(md){
 		font-size: 2em;

@@ -16,13 +16,13 @@ button,
 	cursor: pointer;
 	text-transform: lowercase;
 	margin-bottom: 1.5em;
-	transition: all 0.3s;
+	transition: padding 0.3s;
 		
 	@include breakpoint(sm){	
-		// apply a little margin if > 1 button
-		+ button,
-		+ [role=button] {
-			margin-left: 0.5em;
+		// quantity query: apply margin if > 1 button
+		&:nth-last-child(n+2), 
+		&:nth-last-child(n+2) ~ [role=button] { 
+			margin-right: 0.7em;
 		}
 	}
 	
@@ -44,10 +44,16 @@ button,
 	svg {
 		width: $arrow-width;
 		position: absolute;
-		top: 0.38em;
+		top: 0.4em;
 		right: 0;
 		fill: currentColor;
 		transform: translateX(-$arrow-width);
-		transition: 0.3s;
+		transition: transform 0.3s, opacity 0.3s;
+	}
+
+	// inverted colored button
+	&.inverted {
+		border-color: white;
+		color: white;
 	}	
 }
