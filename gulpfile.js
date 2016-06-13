@@ -57,23 +57,23 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  */
 gulp.task('sass', function () {
 	return gulp.src('_sass/main.scss')
-		.pipe(sassGlob())
-		.pipe(sass({
-			includePaths: ['scss'],
-			outputStyle: 'compressed',
-		}))
-		.on('error', handleErrors)
-		.pipe(prefix(['last 3 versions', '> 1%'], { cascade: true }))
-		.pipe(gulp.dest('_site/css'))
-		.pipe(browserSync.reload({stream:true}))
-		.pipe(gulp.dest('css'));
+	.pipe(sassGlob())
+	.pipe(sass({
+		includePaths: ['scss'],
+		outputStyle: 'compressed',
+	}))
+	.on('error', handleErrors)
+	.pipe(prefix(['last 3 versions', '> 1%'], { cascade: true }))
+	.pipe(gulp.dest('_site/css'))
+	.pipe(browserSync.reload({stream:true}))
+	.pipe(gulp.dest('css'));
 });
 
 /**
  * Concat, minify and check errors on JS files
  */
 gulp.task('scripts', function() {
-  return gulp.src('_js/*.js')
+	return gulp.src('_js/*.js')
 	.pipe(concat('scripts.js'))
 	.pipe(uglify())
 	.on('error', handleErrors)
