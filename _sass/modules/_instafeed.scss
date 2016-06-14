@@ -3,6 +3,7 @@
 .instagram-feed {
 	position: relative;
 	float: left;
+	width: 100%;
 	@include slide-up(15%, 0.9s, 0.1s);	
 }
 
