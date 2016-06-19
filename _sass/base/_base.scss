@@ -26,8 +26,8 @@ img {
 }
 
 ::selection { 
-	background: $teal;
-	color: $text-color; 
+	background: $blue-soft;
+	color: $white; 
 }
 
 // typography
@@ -160,7 +160,7 @@ abbr {
 		height: 1em;
 		width: 100%;
 		display: block;
-		background: rgba($brand-color, 0.25);
+		background: rgba($brand-color, 0.45);
 		position: absolute;
 		bottom: 0;
 		left: 0;

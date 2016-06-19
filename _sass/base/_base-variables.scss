@@ -5,6 +5,7 @@ $teal: 			#b2f6eb;
 $pink:			#ffdcd0;
 $blue:			#1F2677;
 $blue-soft:		#415892;
+$white:			#fff;
 $gray-lighter:		#e6e9ed;
 $gray-light:		#dadae5;
 $gray:			#c5c5cf;
@@ -13,8 +14,8 @@ $gray-darker:		#252633;
 
 // color usage
 $bg-color:		#fff;
-$brand-color:		$pink;
-$text-color:		$blue;
+$brand-color:		$teal;
+$text-color:		darken($blue, 5%);
 
 // font properties
 $font-sans-serif:	"Karla Regular", Helvetica, Arial, sans-serif;
