@@ -34,3 +34,19 @@ FileETag INode MTime Size
 AddDefaultCharset utf-8
 
 Redirect 301 /about /hello
+Redirect 301 /recepten/recepten-eiwit-smoothies/ http://blog.michele.nl/recepten/recepten-eiwit-smoothies/
+Redirect 301 /nails/stone-marble-nails/ http://blog.michele.nl/nails/stone-marble-nails/
+Redirect 301 /web-development/micro-interacties/ http://blog.michele.nl/web-development/micro-interacties/
+Redirect 301 /web-development/front-end-dev-cmd-hva/ http://blog.michele.nl/web-development/front-end-dev-cmd-hva/
+Redirect 301 /web-development/nog-even-css-columns-mogelijkheden-en-beperkingen/ http://blog.michele.nl/web-development/nog-even-css-columns-mogelijkheden-en-beperkingen/
+Redirect 301 /boeken/voor-de-wes-anderson-liefhebbers/ http://blog.michele.nl/boeken/voor-de-wes-anderson-liefhebbers/
+Redirect 301 /onderweg/occhio-bezoekt-muiderslot/ http://blog.michele.nl/onderweg/occhio-bezoekt-muiderslot/
+Redirect 301 /onderweg/hay-house-copenhagen/ http://blog.michele.nl/onderweg/hay-house-copenhagen/
+Redirect 301 /kattenzaken/ameublement-voor-een-kat-van-stand/ http://blog.michele.nl/kattenzaken/ameublement-voor-een-kat-van-stand/
+Redirect 301 /web-development/front-enders-conferentie-de-highlights-van-fronteers-2014/ http://blog.michele.nl/web-development/front-enders-conferentie-de-highlights-van-fronteers-2014/
+Redirect 301 /onderweg/madeira/ http://blog.michele.nl/onderweg/madeira/
+Redirect 301 /web-development/rebecca-purple-663399/ http://blog.michele.nl/web-development/rebecca-purple-663399/
+Redirect 301 /web-development/heeft-ooit-ergens-geblogd/ http://blog.michele.nl/web-development/heeft-ooit-ergens-geblogd/
+Redirect 301 /page3/ http://blog.michele.nl/page3/
+Redirect 301 /page2/ http://blog.michele.nl/page2/
+Redirect 301 /page4/ http://blog.michele.nl/page4/
