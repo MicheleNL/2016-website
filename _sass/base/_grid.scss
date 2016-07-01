@@ -19,11 +19,11 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
-	@include slide-up(10%, 0.9s, 0.1s);
+	@include slide-up(10%, 0.8s, 0s);
 
 	h1, h2 {
 		position: relative;
-		@include slide-up(20%, 0.9s, 0.1s);
+		@include slide-up(20%, 0.8s, 0s);
 	}
 }
 
