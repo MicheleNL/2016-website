@@ -11,21 +11,25 @@ button,
 	font-size: 0.96em;
 	font-weight: normal;
 	line-height: 2;
-	color: $text-color; 
-	padding: 0.15em 4em 0.3em 1.5em;
+	color: $text-color;
+	padding: 0.15em 1.5em 0.3em 1.5em;
 	cursor: pointer;
 	text-transform: lowercase;
 	margin-bottom: 1.5em;
 	transition: padding 0.3s;
-		
-	@include breakpoint(sm){	
+
+	.js & {
+		padding: 0.15em 4em 0.3em 1.5em;
+	}
+
+	@include breakpoint(sm){
 		// quantity query: apply margin if > 1 button
-		&:nth-last-child(n+2), 
-		&:nth-last-child(n+2) ~ [role=button] { 
+		&:nth-last-child(n+2),
+		&:nth-last-child(n+2) ~ [role=button] {
 			margin-right: 0.7em;
 		}
 	}
-	
+
 	@include hocus {
 		padding-left: 2.75em;
 		padding-right: 2.75em;
@@ -35,7 +39,7 @@ button,
 			transform: translateX($arrow-width);
 		}
 	}
-	
+
 	// reset content link style
 	&:before {
 		content: none;
@@ -55,5 +59,5 @@ button,
 	&.inverted {
 		border-color: white;
 		color: white;
-	}	
+	}
 }
