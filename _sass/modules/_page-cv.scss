@@ -5,18 +5,18 @@
 .cv-section {
 	> header {
 		background-color: $blue-soft;
-		color: white;	
+		color: white;
 	}
 
 	.col {
 		@include responsive-padding();
 	}
-	
+
 	// needs min-height to show image
 	header.block-item-img {
 		min-height: 18em;
 		align-items: flex-end;
-			
+
 		@include breakpoint(sm){
 			min-height: 30em;
 		}
@@ -34,7 +34,7 @@
 	}
 }
 
-// quotes 
+// quotes
 .quotes {
 	background: $brand-color;
 	@include responsive-padding();
@@ -47,7 +47,7 @@
 // skills list
 .skills {
 	text-align: center;
-	
+
 	h3,
 	section {
 		flex-basis: 100%;
@@ -63,10 +63,10 @@
 	h4 {
 		margin-top: 1em;
 	}
- 	
+
  	p {
 		margin-bottom: 0.5em;
-	}	
+	}
 }
 
 // questions block
