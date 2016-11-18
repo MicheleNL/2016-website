@@ -6,8 +6,8 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	width: 100%;	
-	
+	width: 100%;
+
 	@include breakpoint(md){
 		flex-wrap: nowrap;
 	}
@@ -28,23 +28,23 @@
 }
 
 // 2 cols
-.col:nth-last-child(n+2), 
-.col:nth-last-child(n+2) ~ .col { 
+.col:nth-last-child(n+2),
+.col:nth-last-child(n+2) ~ .col {
 	flex-basis: 100%;
-	
+
 	 @include breakpoint(md) {
 		flex-basis: 50%;
 	}
 }
 
 // 3 cols
-.col:nth-last-child(n+3), 
-.col:nth-last-child(n+3) ~ .col { 
+.col:nth-last-child(n+3),
+.col:nth-last-child(n+3) ~ .col {
 	flex-basis: 33.333333%;
 }
 
 // 4 cols
-.col:nth-last-child(n+4), 
-.col:nth-last-child(n+4) ~ .col { 
+.col:nth-last-child(n+4),
+.col:nth-last-child(n+4) ~ .col {
 	flex-basis: 25%;
 }

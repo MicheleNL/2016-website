@@ -4,7 +4,7 @@
 	position: relative;
 	float: left;
 	width: 100%;
-	@include slide-up(15%, 0.8s, 0s);	
+	@include slide-up(15%, 0.8s, 0s);
 }
 
 .instagram-feed > a {
@@ -20,7 +20,7 @@
 	@include breakpoint(md){
 		width: 25%;
 	}
-	
+
 	// apply overlay on hover
 	&:after {
 		content: "•••";
@@ -35,7 +35,7 @@
 		background: $brand-color;
 		color: lighten($text-color, 15%);
 		font-size: 2.3em;
-		letter-spacing: -0.356em;	
+		letter-spacing: -0.356em;
 		z-index: 777;
 		pointer-events: none;
 		opacity: 0;
@@ -47,7 +47,7 @@
 		letter-spacing: 0.25em;
 		transition: letter-spacing 0.35s cubic-bezier(0.5, -0.5, 0.1, 2.2), opacity 0.5s ease;
 	}
-	
+
 	// different positioning based on screen width
 	@include breakpoint(md){
 		&:nth-of-type(1),
@@ -75,10 +75,10 @@
 		flex-direction: column;
 		justify-content: center;
 	}
-		
+
 	@include breakpoint(md){
 		width: 25%;
-		left: 50%;	
+		left: 50%;
 	}
 
 	// make flipper on bigger screens
@@ -88,7 +88,7 @@
 
 		@include hocus {
 
-			.front, 
+			.front,
 			.back {
 				transition: transform 1s cubic-bezier(.29, 1.4, .86, 1.06);
 			}
@@ -110,7 +110,7 @@
 }
 
 // flipper panes
-.front, 
+.front,
 .back {
 	position: absolute;
 	top: 0;
@@ -128,7 +128,7 @@
 
 /*  front pane */
 .front {
-	background: lighten($brand-color, 3%);
+	background: lighten($brand-color, 8%);
 	transform: rotateY(0deg);
 }
 
@@ -150,7 +150,7 @@
 .instagram-feed h3 {
 	font-size: 1.4em;
 	text-align: center;
-		
+
 	@include breakpoint(md){
 		font-size: 2em;
 	}

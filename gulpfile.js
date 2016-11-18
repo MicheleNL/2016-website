@@ -1,7 +1,7 @@
 var gulp		= require('gulp');
-var browserSync		= require('browser-sync');
+var browserSync	= require('browser-sync');
 var sass		= require('gulp-sass');
-var sassGlob		= require('gulp-sass-glob');
+var sassGlob	= require('gulp-sass-glob');
 var prefix		= require('gulp-autoprefixer');
 var concat		= require('gulp-concat');
 var uglify		= require('gulp-uglify');
@@ -9,7 +9,7 @@ var notify 		= require('gulp-notify');
 var cp			= require('child_process');
 
 var jekyll		= process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
-var messages		= {
+var messages	= {
 	jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
