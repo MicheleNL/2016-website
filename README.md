@@ -1,12 +1,12 @@
 # 2016-website
-http://www.michele.nl/
+https://www.michele.nl/
 
-##Personal website
+## Personal website
 
-###built with:
+### Built with:
 
 * Jekyll
 * Gulp
 * Sass
 * HTML5
-* Liquid
+* Liquid template language
