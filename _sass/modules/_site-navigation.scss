@@ -1,58 +1,47 @@
 /* The main Header
 ------------------------------*/
 .site-header {
-	padding: ($gutter-sm / 2) $gutter-sm;
-	font-family: $font-sans-serif-bold;
-	font-size: 0.75em;
-	
-	@include breakpoint(sm) {
-		font-size: 1.2em;
-	}
+    padding: ($gutter-sm / 2) $gutter-sm;
+    font-family: $font-sans-serif-bold;
+    font-size: .75em;
 
-	@include breakpoint(md) {
-		padding: $gutter-sm $gutter-md;
-	}
+    @include breakpoint(sm) {
+        font-size: 1.2em;
+    }
 
-	@include breakpoint(lg) {
-		padding: $gutter-md $gutter-xl;
-	}
+    @include breakpoint(md) {
+        padding: $gutter-sm $gutter-md;
+    }
 
-	svg {
-		height: 1.2em;
-		width: auto;
-	}
+    @include breakpoint(lg) {
+        padding: $gutter-md $gutter-xl;
+    }
+}
+
+.site-header a {
+   text-decoration: none;
 }
 
 .site-nav {
-	float: right;
+    float: right;
 }
 
 .site-nav li {
-	float: left;
-	list-style: none;
+    float: left;
+    list-style: none;
 
-	// Gaps between nav items, but not on the last one
-	&:last-child a {
-		margin-right: 0
-	}
+    // Gaps between nav items, but not on the last one
+    &:last-child a {
+        margin-right: 0
+    }
 }
 
 .site-nav a {
-	border: none;
-	margin: 0 1em;
-	padding: 0;
-	
-	&:before {
-		content: none;
-	}
+    border: none;
+    margin: 0 1em;
+    padding: 0;
 
-	// hover menu item
-	@include hocus {
-		color: lighten($text-color, 10%);
-	}
-
-	// current menu item
-	&.current:before  {
-		content: "";
-	}
+    @include hocus {
+        color: lighten($text-color, 10%);
+    }
 }

@@ -1,157 +1,158 @@
 /* Instagram Feed
 ------------------------------*/
 .instagram-feed {
-	position: relative;
-	float: left;
-	width: 100%;
-	@include slide-up(15%, 0.8s, 0s);
+    position: relative;
+    z-index: 555;
+    float: left;
+    width: 100%;
+    @include slide-up(15%, .3s, 0s);
 }
 
 .instagram-feed > a {
-	position: relative;
-	float: left;
-	width: 50%;
-	transform: translate3d(0,0,0);
+    position: relative;
+    float: left;
+    width: 50%;
+    transform: translate3d(0, 0, 0);
 
-	@include breakpoint(sm){
-		width: 33.33333%;
-	}
+    @include breakpoint(sm){
+        width: 33.33333%;
+    }
 
-	@include breakpoint(md){
-		width: 25%;
-	}
+    @include breakpoint(md){
+        width: 25%;
+    }
 
-	// apply overlay on hover
-	&:after {
-		content: "•••";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: $brand-color;
-		color: lighten($text-color, 15%);
-		font-size: 2.3em;
-		letter-spacing: -0.356em;
-		z-index: 777;
-		pointer-events: none;
-		opacity: 0;
-		transition: letter-spacing 0s 0.35s linear, opacity 0.3s ease-out;
-	}
+    // apply overlay on hover
+    &:after {
+        content: '•••';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $accent-color;
+        color: $white;
+        font-size: 1.3em;
+        letter-spacing: -.356em;
+        z-index: 777;
+        pointer-events: none;
+        opacity: 0;
+        transition: letter-spacing 0s .25s linear, opacity .2s ease-out;
+    }
 
-	&:hover:after {
-		opacity: 1;
-		letter-spacing: 0.25em;
-		transition: letter-spacing 0.35s cubic-bezier(0.5, -0.5, 0.1, 2.2), opacity 0.5s ease;
-	}
+    &:hover:after {
+        opacity: 1;
+        letter-spacing: .25em;
+        transition: letter-spacing .25s cubic-bezier(.5, -.5, .1, 2.2), opacity .4s ease;
+    }
 
-	// different positioning based on screen width
-	@include breakpoint(md){
-		&:nth-of-type(1),
-		&:nth-of-type(2){
-			margin-left: 25%;
-		}
-	}
+    // different positioning based on screen width
+    @include breakpoint(md){
+        &:nth-of-type(1),
+        &:nth-of-type(2){
+            margin-left: 25%;
+        }
+    }
 }
 
 .instagram-feed img {
-	width: 100%;
+    width: 100%;
 }
 
 // instagram header positioning
 .instagram-feed header {
-	display: none;
+    display: none;
 
-	@include breakpoint(sm){
-		position: absolute;
-		left: 66.66666%;
-		width: 33.33333%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-	}
+    @include breakpoint(sm){
+        position: absolute;
+        left: 66.66666%;
+        width: 33.33333%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-	@include breakpoint(md){
-		width: 25%;
-		left: 50%;
-	}
+    @include breakpoint(md){
+        width: 25%;
+        left: 50%;
+    }
 
-	// make flipper on bigger screens
-	@include breakpoint(xl){
-		perspective: 80em;
-		z-index: 2;
+    // make flipper on bigger screens
+    @include breakpoint(xl){
+        perspective: 80em;
+        z-index: 2;
 
-		@include hocus {
+        @include hocus {
+            .front,
+            .back {
+                transition: transform .6s cubic-bezier(.29, 1.4, .86, 1.06);
+            }
 
-			.front,
-			.back {
-				transition: transform 1s cubic-bezier(.29, 1.4, .86, 1.06);
-			}
+            .front {
+                transform: rotateY(180deg);
+            }
 
-			.front {
-			    transform: rotateY(180deg);
-			}
+            .back {
+                transform: rotateY(0deg);
+            }
 
-			.back {
-				transform: rotateY(0deg);
-			}
-
-			[role=button] {
-				opacity: 1;
-				transition: opacity 1s 0.4s, padding 0.3s;
-			}
-		}
-	}
+            [role=button] {
+                opacity: 1;
+                transition: opacity .6s .4s, padding .3s;
+            }
+        }
+    }
 }
 
 // flipper panes
 .front,
 .back {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: stretch;
-	flex-direction: column;
-	justify-content: center;
-	backface-visibility: hidden;
-	transform-style: preserve-3d;
-	transition: transform 1s cubic-bezier(.29, 1, .86, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform .6s cubic-bezier(.29, 1, .86, 1);
 }
 
 /*  front pane */
 .front {
-	background: lighten($brand-color, 8%);
-	transform: rotateY(0deg);
+    background: $brand-color;
+    color: $white;
+    transform: rotateY(0deg);
+    cursor: pointer;
 }
 
 /* back pane */
 .back {
-	background: $text-color;
-	transform: rotateY(-180deg);
+    background: $accent-color;
+    transform: rotateY(-180deg);
 }
 
 // button on back pane
 .back [role=button] {
-	align-self: center;
-	margin: 0;
-	opacity: 0;
-	transition: opacity 0.15s 0s, padding 0.3s;
+    align-self: center;
+    margin: 0;
+    opacity: 0;
+    transition: opacity .15s 0s, padding .3s;
 }
 
-
 .instagram-feed h3 {
-	font-size: 1.4em;
-	text-align: center;
+    font-size: 1.4em;
+    text-align: center;
 
-	@include breakpoint(md){
-		font-size: 2em;
-	}
+    @include breakpoint(md){
+        font-size: 2em;
+    }
 }

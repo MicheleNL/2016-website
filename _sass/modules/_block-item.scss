@@ -1,103 +1,88 @@
 // generic block module
 .block-item {
-	position: relative;
+    position: relative;
 
-	// mobile first - change order with flexbox
-	@include breakpoint(md) {
-		&:nth-child(even) .col:nth-child(1) {
-			order: 1;
-		}
-	}
-
-	// overlay effect on hover
-	@include hocus {
-		.block-item-img {
-			filter: grayscale(0) contrast(1.3) saturate(120%);	
-			transition-timing-function: ease-out;
-		}
-
-		.block-item-img:before {
-			opacity: 0.3;
-			transition-timing-function: ease-out;
-		}
-	}
+    // mobile first - change order with flexbox
+    @include breakpoint(md) {
+        &:nth-child(even) .col:nth-child(1) {
+            order: 1;
+        }
+    }
 }
 
 // centered headings in block items
-.block-item > header {		
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	text-align: center;
-	width: 100%;
-	position: relative;
-	min-height: 10em;
-	justify-content: center;
-	padding: 0 $gutter-sm;
+.block-item > header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    min-height: 10em;
+    justify-content: center;
+    padding: 0 $gutter-sm;
 
-	h2,
-	h3 {
-		margin: 0;
-	}
-	
-	h1,
-	h2 {
-		font-size: 2em;
-		will-change: transform;
-		transition: 0.3s;
-		padding: 0;
-		letter-spacing: 0.03em;
+    h2,
+    h3 {
+        margin: 0;
+    }
 
-		@include breakpoint(md) {
-			font-size: 2.6em;
-		}
-	}
+    h1,
+    h2 {
+        font-size: 2em;
+        will-change: transform;
+        transition: 0.3s;
+        padding: 0;
+        letter-spacing: 0.03em;
 
-	h3 {
-		font-size: 1.1em;
-		font-family: $font-sans-serif-italic;
-		color: lighten($text-color, 13%);
-		text-transform: lowercase;
-		@include slide-up(100%, 0.8s, 0s);
+        @include breakpoint(md) {
+            font-size: 2.6em;
+        }
+    }
 
-		&.animate {
-			margin-top: 0.75em;
-		}	
-	}
+    h3 {
+        font-size: 1.1em;
+        color: lighten($text-color, 13%);
+        text-transform: lowercase;
+        @include slide-up(100%, .3s, 0);
+
+        &.animate {
+            margin-top: .75em;
+        }
+    }
 }
 
 // block items with background images
-.block-item-img  {
-	position: relative;
-	width: 100%;
-	min-height: 10em;
-	background-color: $text-color;
-	background-size: cover;
-	background-position: center bottom;
-	filter: grayscale(50%);
-	transform: translate3d(0,0,0); // for cpu acc.
-	transition: filter 1.1s ease-in;
+.block-item-img {
+    position: relative;
+    width: 100%;
+    min-height: 10em;
+    color: $white;
+    background-color: $text-color;
+    background-size: cover;
+    background-position: bottom center;
+    filter: grayscale(100%);
 
-	// larger images on bigger screens
-	@include breakpoint(md){
-		min-height: 18em;
-	}
+    // larger images on bigger screens
+    @include breakpoint(md){
+        min-height: 18em;
+    }
 }
 
 // semi trans layer
 .block-item-img:before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba($text-color, 0.6);
-	transition: opacity 1.1s ease-in;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($text-color, .6);
+    transition: opacity 1.1s ease-in;
 }
 
 // apply text-shadow for readability
-.block-item-img	h2 {
-	text-shadow: 0 0 1em rgba($text-color, 0.8);
+.block-item-img h2 {
+    text-shadow: 0 0 1em rgba($text-color, .8);
 }

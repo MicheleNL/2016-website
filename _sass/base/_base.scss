@@ -5,8 +5,8 @@
 body, h1, h2, h3, h4, h5,
 p, blockquote,
 dl, dd, ol, ul {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -21,185 +21,183 @@ html {
 
 // images
 img {
-	max-width: 100%;
-	vertical-align: middle;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 ::selection {
-	background: $blue-soft;
-	color: $white;
+    background: $accent-color;
+    color: $white;
 }
 
 // typography
 body {
-	background-color: $bg-color;
-	font-family: $base-font-family;
-	font-size: $base-font-size;
-	line-height: $base-line-height;
-	font-weight: normal;
-	font-style: normal;
-	font-size: $base-font-size;
-	color: $text-color;
-	-webkit-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	font-feature-settings: "kern" on;
+    background-color: $bg-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: normal;
+    font-style: normal;
+    font-size: $base-font-size;
+    color: $text-color;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" on;
 }
 
 // headings & faux headings
 h1, h2, h3, h4, h5, h6,
 .alpha, .beta, .gamma, .delta, .epsilon {
-	font-family: $heading-font-family;
-	font-weight: normal;
-	width: 100%;
+    font-family: $heading-font-family;
+    font-weight: normal;
+    width: 100%;
 }
 
 // use jeremy keith's greek alphabet solution
 h1,
 .alpha {
-	font-family: $font-sans-serif-black;
-	font-size: 3.6em;
-	line-height: 1;
-	margin-top: 0;
-	margin-bottom: 0;
+    font-family: $font-sans-serif-black;
+    font-size: 3.6em;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
 
-	@include breakpoint(sm){
-		font-size: 4.2em;
-	}
+    @include breakpoint(sm){
+        font-size: 4.2em;
+    }
 
-	@include breakpoint(md){
-		font-size: 4.5em;
-	}
+    @include breakpoint(md){
+        font-size: 4.5em;
+    }
 
-	@include breakpoint(xl){
-		font-size: 7em;
-	}
+    @include breakpoint(xl){
+        font-size: 7em;
+    }
 }
 
 h2,
 .beta {
-	font-size: 1.7em;
-	line-height: 1;
-	margin-top: 0.627450980392157em;
-	margin-bottom: 0.627450980392157em;
+    font-size: 1.7em;
+    line-height: 1;
+    margin-top: .627450980392157em;
+    margin-bottom: .627450980392157em;
 }
 
 h3,
 .gamma {
-	font-size: 1.3em;
-	line-height: 1em;
-	margin-top: 1em;
-	margin-bottom: 0.3em;
+    font-size: 1.3em;
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: .3em;
 }
 
 h4,
-.delta{
-	font-size: 1em;
-	line-height: 1.6em;
-	margin-top: 1.6em;
-	margin-bottom: 0em;
+.delta {
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-top: 1.6em;
+    margin-bottom: 0;
 }
 
 h5,
 .epsilon {
-	font-size: 1em;
-	line-height: 1.6em;
-	margin-top: 1.6em;
-	margin-bottom: 0em;
+    font-size: 1em;
+    line-height: 1.6em;
+    margin-top: 1.6em;
+    margin-bottom: 0;
 }
 
-p, ul, ol, blockquote {
-	margin-top: 0;
-	margin-bottom: 2rem;
+p,
+ul,
+ol,
+blockquote {
+    margin-top: 0;
+    margin-bottom: 2rem;
 }
 
-b, strong, em, small {
+b,
+strong,
+em,
+small {
   line-height: 1;
 }
 
 strong {
-	font-weight: bold;
-}
-
-em {
-	font-family: $font-sans-serif-italic;
-	font-weight: bold;
+    font-weight: bold;
 }
 
 abbr {
-	cursor: help;
+    cursor: help;
 }
 
 abbr:before {
-	background: rgba($text-color, 0.08);
+    background: rgba($text-color, .08);
 }
 
-// links
+// Links
 a {
-	text-decoration: none;
-	color: $text-color;
+    color: $text-color;
+    text-decoration-skip-ink: auto;
 }
 
-// punishment for empty links
+// Punishment for empty links
 a[href="#"] {
-	cursor: not-allowed;
+    cursor: not-allowed;
 }
 
-// special underline for content links and abbreviations
+// Special underline for content links and abbreviations
 p a,
 ul a,
 dd a,
 abbr {
-	position: relative;
-	display: inline-block;
-	padding: 0 0.1em;
-	z-index: 1;
-	color: $text-color;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    padding: 0 .1em;
+    color: $text-color;
+    text-decoration: none;
 
-	&:before {
-		content: "";
-		height: 1em;
-		width: 100%;
-		display: block;
-		background: rgba($brand-color, 0.45);
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-		transform: scaleY(0.6) translateY(-0.15em);
-		transform-origin: center bottom;
-		transition: transform 0.15s ease-out;
-	}
+    &::before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1em;
+        background: rgba($brand-color, .15);
+        transform: scaleY(.6) translateY(-.15em);
+        transform-origin: center bottom;
+        transition: transform .15s ease-out;
+    }
 
-	@include hocus {
-		&:before {
-			transform: scaleY(1) translateY(-0.3em);
-			transition: transform 0.35s cubic-bezier(0.5, -0.5, 0.1, 1.8);
-		}
-	}
+    @include hocus {
+        &::before {
+            transform: scaleY(1) translateY(-.3em);
+            transition: transform 0.35s cubic-bezier(.5, -.5, .1, 1.8);
+        }
+    }
 }
 
 // lists
-ul, ol {
-	margin-left: 3em;
+ul,
+ol {
+    margin-left: 3em;
 }
 
-li {
-	> ul,
-	> ol {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+li > ul,
+li > ol {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-nav {
-	ol,
-	ul {
-		margin: 0;
-		padding: 0;
-	}
+nav ol,
+nav ul {
+    margin: 0;
+    padding: 0;
+}
 
-	li {
-		list-style: none;
-	}
+nav li {
+    list-style: none;
 }

@@ -1,81 +1,81 @@
 /* Page navigation (prev next post)
 ----------------------------------*/
 .page-navigation {
-	display: none;
-	flex-direction: row;
-	align-items: center;
-	border-top: 0.05em solid $text-color;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    border-top: .05em solid $text-color;
 
-	@include breakpoint(sm){
-		display: flex;
-	}
+    @include breakpoint(sm) {
+        display: flex;
+    }
 
-	// flex the page nav items 
-	> a {
-		flex: 1 1 50%;
-		font-weight: 600;
-		padding: 2em;
-		color: $text-color;
-		font-family: $font-sans-serif;
-		
-		@include hocus {
-			color: lighten($text-color, 10%);
-		}	
-	}
+    // flex the page nav items
+    > a {
+        flex: 1 1 50%;
+        padding: 2em;
+        color: $text-color;
+        font-family: $font-sans-serif;
+        font-weight: 600;
 
-	svg {
-		width: 1.5em;
-		vertical-align: middle;
-		margin-left: 2em;
-		fill: currentColor;
-		transition: transform 0.1s, opacity 0.3s;
-	}	
+        @include hocus {
+            color: lighten($text-color, 10%);
+        }
+    }
+
+    svg {
+        width: 1.5em;
+        vertical-align: middle;
+        margin-left: 2em;
+        fill: currentColor;
+        transition: transform .1s, opacity .3s;
+    }
 }
 
 .next-link {
-	text-align: right;
-	position: relative;
+    position: relative;
+    text-align: right;
 }
 
 // line
 .next-link:after {
-	content: "";
-	width: 0.05em;
-	height: 80%;
-	position: absolute;
-	top: 50%;
-	left: 0;
-	transform: translate3d(-50%, -50%, 0);
-	display: block;
-	background: $text-color;
+    content: '';
+    width: .05em;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate3d(-50%, -50%, 0);
+    display: block;
+    background: $text-color;
 }
 
 .prev-link {
-	text-align: left;
+    text-align: left;
 }
 
 .prev-link {
-	svg {
-		transform: rotate(-180deg) translate3d(0.4em, -0.07em, 0);
-	}
+    svg {
+        transform: rotate(-180deg) translate3d(.4em, -.07em, 0);
+    }
 
-	@include hocus {
-		svg { 
-			transform: rotate(-180deg) translate3d(2.4em, -0.07em, 0);	
-			opacity: 0;
-		}
-	}
+    @include hocus {
+        svg {
+            transform: rotate(-180deg) translate3d(2.4em, -.07em, 0);
+            opacity: 0;
+        }
+    }
 }
 
 .next-link {
-	svg {
-		transform: translate3d(-1.4em, -0.07em, 0);	
-	}
+    svg {
+        transform: translate3d(-1.4em, -.07em, 0);
+    }
 
-	@include hocus {
-		svg {
-			transform: translate3d(0.4em, -0.07em, 0);
-			opacity: 0;
-		}
-	}
+    @include hocus {
+        svg {
+            transform: translate3d(0.4em, -.07em, 0);
+            opacity: 0;
+        }
+    }
 }

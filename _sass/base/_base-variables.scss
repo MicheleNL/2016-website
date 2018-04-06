@@ -1,42 +1,36 @@
 /* Variables
 ---------------------------------*/
-// color palette
-$teal:          #b2f6eb;
-$pink:          #f9d2d1;
-$blue:          #1F2677;
-$blue-soft:     #415892;
-$white:         #fff;
-$gray-lighter:  #e6e9ed;
-$gray-light:    #dadae5;
-$gray:          #c5c5cf;
-$gray-dark:     #5c5c69;
-$gray-darker:   #252633;
+// Color palette
+$white: #ffffff;
+$blackish: #1e1f23;
+$coral: #ca6868;
+$green: #354a52;
 
-// color usage
-$bg-color:      #fff;
-$brand-color:   $pink;
-$text-color:    darken($blue, 12%);
+// Color usage
+$bg-color: $white;
+$brand-color: $coral;
+$accent-color: $green;
+$text-color: $blackish;
 
-// font properties
-$font-sans-serif:           "Karla Regular", Helvetica, Arial, sans-serif;
-$font-sans-serif-italic:    "Karla Italic", Helvetica, Arial, sans-serif;
-$font-sans-serif-bold:      "Circular Bold", Helvetica, Arial, sans-serif;
-$font-sans-serif-black:     "Circular Black", Helvetica, Arial, sans-serif;
-$heading-font-family:       $font-sans-serif-bold;
-$base-font-family:          $font-sans-serif;
+// Font families
+$font-sans-serif: "Circular Book", Helvetica, Arial, sans-serif;
+$font-sans-serif-bold: "Circular Bold", Helvetica, Arial, sans-serif;
+$font-sans-serif-black: "Circular Black", Helvetica, Arial, sans-serif;
+$heading-font-family: $font-sans-serif-bold;
+$base-font-family: $font-sans-serif;
 
-$base-font-size:    1.2em;
-$base-font-weight:  400;
-$base-line-height:  1.6em;
+$base-font-size: 1.2em;
+$base-font-weight: 400;
+$base-line-height: 1.6;
 
-// magic numbers
-$gutter-sm:         1.5rem;
-$gutter-md:         2rem;
-$gutter-lg:         4rem;
-$gutter-xl:         6rem;
+// Magic numbers
+$gutter-sm: 1.5rem;
+$gutter-md: 2rem;
+$gutter-lg: 4rem;
+$gutter-xl: 6rem;
 
-// breakpoints
-$breakpoint-sm:     30em;
-$breakpoint-md:     50em;
-$breakpoint-lg:     60em;
-$breakpoint-xl:     67em;
+// Breakpoints
+$breakpoint-sm: 30em;
+$breakpoint-md: 50em;
+$breakpoint-lg: 60em;
+$breakpoint-xl: 67em;

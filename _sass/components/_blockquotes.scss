@@ -1,27 +1,26 @@
 // blockquotes
 blockquote {
-	font-family: $font-sans-serif-italic;
 	font-size: 1.3em;
 	line-height: 1;
+}
 
-	> :last-of-type {
-		margin-bottom: 0.3em;
-	}
-	
-	// quote the author
-	footer {
-		font-size: 0.7em;
-		font-style: normal;
-		font-family: $font-sans-serif-black;
-	}
+blockquote > :last-of-type {
+	margin-bottom: .3em;
+}
 
-	// deco line
-	footer:before {
-		content: "";
-		width: 1.2em;
-		border-top: 0.15em solid;
-		display: inline-block;
-		vertical-align: middle;
-		margin: 0 0.3em 0.15em 0;
-	}
+// quote the author
+blockquote footer {
+	font-size: .7em;
+	font-style: normal;
+	font-family: $font-sans-serif-black;
+}
+
+// decorative line
+blockquote footer:before {
+	content: '';
+	display: inline-block;
+	width: 1.2em;
+	vertical-align: middle;
+	margin: 0 .3em .15em 0;
+	border-top: .15em solid;
 }

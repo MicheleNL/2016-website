@@ -1,28 +1,31 @@
 /* Table like list
 ---------------------------------*/
 .data-list {
-	display: flex;
-	flex-wrap: wrap;
-	align-self: center;
-	text-align: center;
-	
-	@include breakpoint(sm){
-		text-align: left;
-	}
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    text-align: center;
 
-	dd, dt {
-		flex-basis: 100%;
+    @include breakpoint(sm) {
+        text-align: left;
+    }
+}
 
-		@include breakpoint(sm){
-			flex-basis: 50%;
-		}
-	}
+.data-list dd,
+.data-list dt {
+    flex-basis: 100%;
+}
 
-	dt {
-		font-family: $font-sans-serif-bold;
-	}
+.data-list dt {
+    font-family: $font-sans-serif-bold;
+    @include breakpoint(sm) {
+        flex-basis: 35%;
+    }
+}
 
-	dd {
-		margin-bottom: 0.6em;
-	}
+.data-list dd {
+    margin-bottom: .6em;
+    @include breakpoint(sm) {
+        flex-basis: 65%;
+    }
 }

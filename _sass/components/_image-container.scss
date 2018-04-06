@@ -2,86 +2,86 @@
 ------------------------------*/
 .image-container,
 .caption {
-	position: relative;
-	
-	img  {
-		opacity: 0;
-		width: 100%;	
-	}
+    position: relative;
 
-	&.animate img {
-		opacity: 1;
-		transition: opacity 1.1s ease;
-	}
+    img  {
+        opacity: 0;
+        width: 100%;
+    }
 
-	+ h2, 
-	+ h3 {
-		margin-top: 0.4em;
-	}
+    &.animate img {
+        opacity: 1;
+        transition: opacity 1.1s ease;
+    }
+
+    + h2,
+    + h3 {
+        margin-top: 0.4em;
+    }
 }
 
 p {
-	position: relative; // needs to be rel for positioning img
+    position: relative;
 }
 
 // image container to break out margins
 .image-container {
-	margin: 0;
-	position: relative;
+    position: relative;
+    margin: 0;
 
-	@include breakpoint(sm) {
-		margin-left: -$gutter-sm;  
-		margin-right: -$gutter-sm; 
-	}
+    @include breakpoint(sm) {
+        margin-left: -$gutter-sm;
+        margin-right: -$gutter-sm;
+    }
 
-	@include breakpoint(md) {
-		margin-left: -$gutter-xl;  
-		margin-right: -$gutter-xl; 
-	}
+    @include breakpoint(md) {
+        margin-left: -$gutter-xl;
+        margin-right: -$gutter-xl;
+    }
 }
 
-// colored image frame behind img 
+// colored image frame behind img
 .image-frame {
-	background: $brand-color; 
-	margin: 0.32em 0;
+    margin: .32em 0;
+    background: $brand-color;
 
-	.image-container:first-child & {
-		margin-top: 0;
-	}
+    .image-container:first-child & {
+        margin-top: 0;
+    }
 
-	@media screen and (min-width: 30em) {	
-		margin: 2em 0;			
-	}
+    @media screen and (min-width: 30em) {
+        margin: 2em 0;
+    }
 }
 
 // image captions
 .caption {
-	position: relative;
-	font-size: 0.9em;
-	font-family: $font-sans-serif-bold;
-	line-height: 1.2;
-	display: block;
-	margin: 1em 0 2em 0;
-	padding: 0;
-	z-index: 1;
+    z-index: 1;
+    position: relative;
+    display: block;
+    margin: 1em 0 2em 0;
+    padding: 0;
+    font-size: .9em;
+    font-family: $font-sans-serif-bold;
+    line-height: 1.2;
 
-	@include breakpoint(sm){
-		margin: -1.35em 0 2em 0;
-		padding: 0 $gutter-md;
-	}
+    @include breakpoint(sm) {
+        margin: -1.35em 0 2em 0;
+        padding: 0 $gutter-md;
+    }
 
-	@include breakpoint(md){
-		padding: 0 $gutter-xl 0 ($gutter-xl + 2rem);
+    @include breakpoint(md) {
+        padding: 0 $gutter-xl 0 ($gutter-xl + 2rem);
 
-		// pretty line next to caption
-		&:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: -0.5em;
-			left: $gutter-xl;
-			border-left: 0.09rem solid;
-			height: calc(100% + 0.33em);
-		}
-	}	
+        // pretty line next to caption
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: -.5em;
+            left: $gutter-xl;
+            border-left: .09rem solid;
+            height: calc(100% + .33em);
+        }
+    }
 }

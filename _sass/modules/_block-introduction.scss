@@ -1,19 +1,23 @@
-// introduction row with cols
+// Introduction row with cols
 .block-introduction {
-	display: flex;
-	@extend %clearfix;
+    @extend %clearfix;
+    display: flex;
+    align-items: flex-start;
+}
 
-	.col {
-		@include responsive-padding();
-		
-		p:last-of-type {
-			margin-bottom: 0;
-		}
-	}
+.block-introduction .col {
+    @include responsive-padding;
+}
 
-	.col:last-child {
-		font-size: 1.23em;
-		line-height: 1.65em;
-		background: $brand-color;
-	}
+.block-introduction .col:last-of-type {
+    margin-bottom: 0;
+}
+
+.block-introduction h1 {
+    color: $accent-color;
+    margin-top: -.085em; margin-left: -.06em;
+}
+
+.block-introduction .col:last-child p:first-child {
+    font-size: 1.25em; line-height: 1.5;
 }

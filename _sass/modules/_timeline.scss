@@ -1,112 +1,114 @@
 /*  Timeline with animated lines and dots
 -------------------------------------------*/
 .timeline {
-	@extend %clearfix;
+    @extend %clearfix;
 
-	&.col {
-		display: block;
-		overflow: hidden; // needed for ani from outside viewport
-	}
-
-	dt {
-		float: left;
-		width: 15%;
-		padding: 2.2em 1em 0 0;
-		font-size: 0.6em;
-		text-align: right;
-
-		@include breakpoint(sm) {
-			padding-top: 1.7em;
-			font-size: 0.8em;
-		}
-	}
-
-	dd {
-		position: relative;
-		float: left;
-		width: 85%;
-		padding: 0 0 1em 1em;
-
-		@include breakpoint(sm) {
-			padding: 0 0 1em 2em;
-		}
-
-		// line, except for last line
-		&:not(:last-of-type):before {
-			content: "";
-			position: absolute;
-			display: block;
-			top: 2.5em;
-			left: -0.05em;
-			width: 0.05em;
-			height: calc(100% - 14px);		
-			background: $brand-color;
-			transform: scaleY(0);
-			transform-origin: center top;
-		}
-
-		//  animate lines 
-		&.animate:before {
-			transform: scaleY(1);
-			transition: transform 0.8s 0.5s;
-		}	
-	}
-
-	article {
-		margin-top: 1.5em;
-
-		// if supported
-		.js &,
-		.cssanimations & {
-			transform: translate3d(2em, 0, 0);
-			opacity: 0;
-			will-change: transform, opacity;
-
-			// when in viewport
-			&.animate {
-				transform: translate3d(0, 0, 0);
-				opacity: 1;
-				transition: transform 0.75s 0.2s ease, opacity 0.75s 0.2s ease;
-			}
-		}
-	}
-
-	p {
-		font-family: $font-sans-serif-italic;
-		color: lighten($text-color, 12%);
-		line-height: 1.2;
-		margin: 0;
-	}
-
-	// dots on lines
-	.time-dot {
-		display: block;
-		width: 11px;
-		height: 11px;
-		background: $bg-color;
-		border-radius: 50%;
-		border: 0.15rem solid $brand-color;			
-		position: absolute;
-		top:  1.85em;
-		left: -6px;
-
-		// if supported
-		.js &,
-		.cssanimations & {
-			transform: scale(0.1);
-			
-			// animate dots 
-			&.animate {
-				animation: scale-in 0.6s 0.4s forwards cubic-bezier(0.53, 0.08, 0.07, 1.22);
-			}
-		}
-	}
+    &.col {
+        display: block;
+        overflow: hidden; // needed for ani from outside viewport
+    }
 }
 
-// different alignment for bigger timeline
+.timeline dt {
+    width: 15%;
+    float: left;
+    padding: 2.75em 1em 0 0;
+    font-size: .6em;
+    text-align: right;
+
+    @include breakpoint(sm) {
+        padding-top: 1.8em;
+        font-size: .8em;
+    }
+}
+
+.timeline dd {
+    position: relative;
+    float: left;
+    width: 85%;
+    padding: 0 0 1em 1em;
+
+    @include breakpoint(sm) {
+        padding-left: 2em;
+    }
+
+    // Line, except for last line
+    &:not(:last-of-type)::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 2.5em;
+        left: -.05em;
+        width: .05em;
+        height: calc(100% - 14px);
+        background: $brand-color;
+        transform-origin: center top;
+        .js & {
+            transform: scaleY(0);
+        }
+    }
+
+    // Animate lines
+    .js &,
+    .cssanimations & {
+        &.animate::before {
+            transform: scaleY(1);
+            transition: transform .5s .5s;
+        }
+    }
+}
+
+.timeline article {
+    margin-top: 1.5em;
+
+    .js &,
+    .cssanimations & {
+        transform: translate3d(2em, 0, 0);
+        opacity: 0;
+        will-change: transform, opacity;
+
+        // When in viewport
+        &.animate {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+            transition: transform .5s .2s ease, opacity .5s .2s ease;
+        }
+    }
+}
+
+.timeline p {
+    margin: 0;
+    color: lighten($text-color, 12%);
+    line-height: 1.2;
+}
+
+// Dots on lines
+.timeline .time-dot {
+    position: absolute;
+    top: 1.85em;
+    left: -6px;
+    width: 11px;
+    height: 11px;
+    background: $bg-color;
+    border-radius: 50%;
+    border: 0.15rem solid $brand-color;
+
+    .js &,
+    .cssanimations & {
+        transform: scale(.1);
+
+        // Animate dots
+        &.animate {
+            animation: scale-in .4s .4s forwards cubic-bezier(.53, .08, .07, 1.22);
+        }
+    }
+}
+
+// Different alignment for bigger timeline
 .timeline-experience dt {
-	width: 25%;
+    width: 25%;
 }
+
 .timeline-experience dd {
-	width: 75%;
+    width: 75%;
 }

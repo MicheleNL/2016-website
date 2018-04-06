@@ -1,50 +1,49 @@
 /* Grid based on item count
 ---------------------------------*/
 .row {
-	align-items: stretch; // center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-	width: 100%;
+    align-items: stretch; // center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 
-	@include breakpoint(md){
-		flex-wrap: nowrap;
-	}
+    @include breakpoint(md){
+        flex-wrap: nowrap;
+    }
 }
 
 // column quantity queries
-.col {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	@include slide-up(10%, 0.8s, 0s);
+.col {;
+    @include slide-up(3%, .3s, 0s);
+}
 
-	h1, h2 {
-		position: relative;
-		@include slide-up(20%, 0.8s, 0s);
-	}
+.col h1,
+.col h2 {
+    position: relative;
+    @include slide-up(3%, .3s, 0s);
+}
+.col > :last-child {
+    margin-bottom: 0;
 }
 
 // 2 cols
 .col:nth-last-child(n+2),
 .col:nth-last-child(n+2) ~ .col {
-	flex-basis: 100%;
-
-	 @include breakpoint(md) {
-		flex-basis: 50%;
-	}
+    flex-basis: 100%;
+    @include breakpoint(md) {
+        flex-basis: 50%;
+    }
 }
 
 // 3 cols
 .col:nth-last-child(n+3),
 .col:nth-last-child(n+3) ~ .col {
-	flex-basis: 33.333333%;
+    flex-basis: 33.333333%;
 }
 
 // 4 cols
 .col:nth-last-child(n+4),
 .col:nth-last-child(n+4) ~ .col {
-	flex-basis: 25%;
+    flex-basis: 25%;
 }

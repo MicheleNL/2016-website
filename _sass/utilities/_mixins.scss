@@ -2,79 +2,79 @@
 ---------------------------------*/
 // mixin for automatically including focus styles with hover
 @mixin hocus {
-	&:hover,
-	&:focus {
-		@content;
-	}
+    &:hover,
+    &:focus {
+        @content;
+    }
 }
 
 // mixin for easier media queries
 @mixin breakpoint($viewport) {
-	// extra large
-	@if $viewport == xl {
-		@media screen and (min-width: $breakpoint-xl) {
-			@content;
-		}
-	}
+    // extra large
+    @if $viewport == xl {
+        @media screen and (min-width: $breakpoint-xl) {
+            @content;
+        }
+    }
 
-	// large
-	@if $viewport == lg {
-		@media screen and (min-width: $breakpoint-lg) {
-			@content;
-		}
-	}
-	// medium
-	@else if $viewport == md {
-		@media screen and (min-width: $breakpoint-md) {
-			@content;
-		}
-	}
-	// small
-	@else if $viewport == sm {
-		@media screen and (min-width: $breakpoint-sm)  {
-			@content;
-		}
-	}
+    // large
+    @if $viewport == lg {
+        @media screen and (min-width: $breakpoint-lg) {
+            @content;
+        }
+    }
+    // medium
+    @else if $viewport == md {
+        @media screen and (min-width: $breakpoint-md) {
+            @content;
+        }
+    }
+    // small
+    @else if $viewport == sm {
+        @media screen and (min-width: $breakpoint-sm)  {
+            @content;
+        }
+    }
 }
 // usage:  @include breakpoint(lg) { color: hotpink; }
 
 
 // mixin for slide up animation
 @mixin slide-up($offset, $duration, $delay) {
-	opacity: 0;
-	transform: translate3d(0, $offset, 0);
+    opacity: 0;
+    transform: translate3d(0, $offset, 0);
 
-	@keyframes slide-up{
-		0% 		{ transform: translate3d(0, $offset, 0); opacity: 0; }
-		100%	{ transform: none; opacity: 1; }
-	}
-	&.animate {
-		animation: slide-up $duration $delay both cubic-bezier(.4,0,.2,1);
-	}
-	.no-js & {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-		&.animate {
-			animation: none;
-		}
-	}
+    @keyframes slide-up{
+        0%      { transform: translate3d(0, $offset, 0); opacity: 0; }
+        100%    { transform: none; opacity: 1; }
+    }
+    &.animate {
+        animation: slide-up $duration $delay both cubic-bezier(.4,0,.2,1);
+    }
+    .no-js & {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        &.animate {
+            animation: none;
+        }
+    }
 }
 
 // usage:  @include slide-up(100%, 0.4s, 0.1s);
 
 // mixin for relative padding
 @mixin responsive-padding {
-	padding: $gutter-sm;
+    padding: $gutter-sm;
 
-	@include breakpoint(md) {
-		padding: $gutter-md;
-	}
+    @include breakpoint(md) {
+        padding: $gutter-md;
+    }
 
-	@include breakpoint(lg) {
-		padding: $gutter-lg;
-	}
+    @include breakpoint(lg) {
+        padding: $gutter-lg;
+    }
 
-	@include breakpoint(xl) {
-		padding: $gutter-xl;
-	}
+    @include breakpoint(xl) {
+        padding: $gutter-xl;
+    }
 }

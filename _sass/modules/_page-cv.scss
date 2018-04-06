@@ -3,79 +3,73 @@
 
 // generic cv section settings
 .cv-section {
-	> header {
-		background-color: $blue-soft;
-		color: white;
-	}
+    .col {
+        @include responsive-padding;
+    }
 
-	.col {
-		@include responsive-padding();
-	}
+    > header {
+        background-color: $accent-color;
+    }
 
-	// needs min-height to show image
-	header.block-item-img {
-		min-height: 18em;
-		align-items: flex-end;
 
-		@include breakpoint(sm){
-			min-height: 30em;
-		}
+    // needs min-height to show image
+    header.block-item-img {
+        min-height: 18em;
+        align-items: flex-end;
 
-		@include breakpoint(md){
-			min-height: 0;
-			align-items: center;
-		}
-	}
+        @include breakpoint(sm) {
+            min-height: 30em;
+        }
 
-	@include hocus {
-		header.block-item-img {
-			filter: none;
-		}
-	}
+        @include breakpoint(md) {
+            min-height: 0;
+            align-items: center;
+        }
+    }
 }
 
 // quotes
 .quotes {
-	background: $brand-color;
-	@include responsive-padding();
+    background: $brand-color;
+    @include responsive-padding;
 }
 
-.quotes	blockquote:last-of-type {
-	margin-bottom: 0;
+.quotes blockquote:last-of-type {
+    margin-bottom: 0;
 }
 
 // skills list
 .skills {
-	text-align: center;
+    text-align: center;
 
-	h3,
-	section {
-		flex-basis: 100%;
-	}
+    h3,
+    section {
+        flex-basis: 100%;
+    }
 
-	section:not(:first-of-type):before {
-		content: "";
-		width: 2em;
-		display: inline-block;
-		border-top: 0.05em solid $brand-color;
-	}
+    section:not(:first-of-type):before {
+        content: '';
+        width: 2em;
+        display: inline-block;
+        border-top: .05em solid $brand-color;
+    }
 
-	h4 {
-		margin-top: 1em;
-	}
+    h4 {
+        margin-top: 1em;
+    }
 
- 	p {
-		margin-bottom: 0.5em;
-	}
+    p {
+        margin-bottom: .5em;
+    }
 }
 
 // questions block
 .questions  {
-	background: $text-color;
-	color: white;
-	@include responsive-padding();
+    background: $accent-color;
+    color: $white;
+    @include responsive-padding;
 
-	&.col {
-		align-items: flex-start;
-	}
+    &.col {
+        align-items: flex-start;
+    }
 }
