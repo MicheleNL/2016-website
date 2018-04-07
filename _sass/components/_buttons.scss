@@ -8,12 +8,12 @@ button,
     border: .09rem solid $text-color;
     border-radius: 1.5em;
     font-family: $font-sans-serif-bold;
-    font-size: 0.96em;
+    font-size: 1em;
     font-weight: normal;
-    line-height: 2;
+    line-height: 1;
     text-decoration: none;
     color: $text-color;
-    padding: .3em 1.5em .3em;
+    padding: .8em 1.5em;
     cursor: pointer;
     margin-bottom: 1.5em;
     transition: padding .3s;
@@ -23,7 +23,7 @@ button,
     }
 
     .js & {
-        padding: .3em 4em .3em 1.5em;
+        padding: .8em 4em .8em 1.5em;
     }
 
     @include breakpoint(sm){
@@ -52,7 +52,7 @@ button,
     svg {
         width: $arrow-width;
         position: absolute;
-        top: .4em;
+        top: .5em;
         right: 0;
         fill: currentColor;
         transform: translateX(-$arrow-width);

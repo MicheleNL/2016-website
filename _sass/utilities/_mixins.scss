@@ -8,6 +8,20 @@
     }
 }
 
+/**
+ * Font smoothing
+ */
+@mixin font-smoothing($enabled: true) {
+    @if $enabled {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } @else {
+        -webkit-font-smoothing: initial;
+        -moz-osx-font-smoothing: initial;
+    }
+}
+
+
 // mixin for easier media queries
 @mixin breakpoint($viewport) {
     // extra large
@@ -39,7 +53,10 @@
 // usage:  @include breakpoint(lg) { color: hotpink; }
 
 
-// mixin for slide up animation
+/**
+ * Mixin for slide up animation
+ * usage: @include slide-up(100%, .4s, .1s);
+ */
 @mixin slide-up($offset, $duration, $delay) {
     opacity: 0;
     transform: translate3d(0, $offset, 0);
@@ -60,20 +77,17 @@
     }
 }
 
-// usage:  @include slide-up(100%, 0.4s, 0.1s);
-
-// mixin for relative padding
+/**
+ * Mixin for relative padding
+ */
 @mixin responsive-padding {
     padding: $gutter-sm;
-
     @include breakpoint(md) {
         padding: $gutter-md;
     }
-
     @include breakpoint(lg) {
         padding: $gutter-lg;
     }
-
     @include breakpoint(xl) {
         padding: $gutter-xl;
     }

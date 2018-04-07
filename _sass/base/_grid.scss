@@ -7,7 +7,6 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-
     @include breakpoint(md){
         flex-wrap: nowrap;
     }

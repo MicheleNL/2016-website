@@ -149,9 +149,9 @@
 }
 
 .instagram-feed h3 {
+    margin: 0;
     font-size: 1.4em;
     text-align: center;
-
     @include breakpoint(md){
         font-size: 2em;
     }

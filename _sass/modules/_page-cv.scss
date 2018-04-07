@@ -9,8 +9,8 @@
 
     > header {
         background-color: $accent-color;
+        color: $white;
     }
-
 
     // needs min-height to show image
     header.block-item-img {
@@ -30,8 +30,9 @@
 
 // quotes
 .quotes {
-    background: $brand-color;
     @include responsive-padding;
+    background: $brand-color;
+    color: $white;
 }
 
 .quotes blockquote:last-of-type {

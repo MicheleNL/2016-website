@@ -1,28 +1,26 @@
-/* The Contact page
-------------------------------*/
-.contact h1 {
-    @include breakpoint(xl) {
-        font-size: 5.3em;
-    }
-}
-
+/**
+ * The Contact page
+ */
 .contact .col {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    text-align: center;
     @include responsive-padding;
-
     @include breakpoint(md) {
-        height: calc(100vh - 5rem);
+        height: calc(100vh - 5rem - 5.5rem);
+    }
+    @include breakpoint(lg) {
+        height: calc(100vh - 5rem - 6.5rem);
     }
 }
-
 .contact .col:first-of-type {
     background: $brand-color;
+    text-align: center;
 }
-
-.contact .col:first-of-type h1 {
+.contact h1 {
     color: $accent-color;
+     @include breakpoint(xl) {
+        font-size: 5.3em;
+    }
 }

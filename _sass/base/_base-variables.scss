@@ -1,5 +1,6 @@
-/* Variables
----------------------------------*/
+/**
+ * Variables
+ */
 // Color palette
 $white: #ffffff;
 $blackish: #1e1f23;
@@ -10,7 +11,7 @@ $green: #354a52;
 $bg-color: $white;
 $brand-color: $coral;
 $accent-color: $green;
-$text-color: $blackish;
+$text-color: darken($green, 15%);
 
 // Font families
 $font-sans-serif: "Circular Book", Helvetica, Arial, sans-serif;
@@ -24,10 +25,11 @@ $base-font-weight: 400;
 $base-line-height: 1.6;
 
 // Magic numbers
+$gutter-xs: .75rem;
 $gutter-sm: 1.5rem;
 $gutter-md: 2rem;
 $gutter-lg: 4rem;
-$gutter-xl: 6rem;
+$gutter-xl: 5rem;
 
 // Breakpoints
 $breakpoint-sm: 30em;

@@ -90,8 +90,8 @@
     width: 11px;
     height: 11px;
     background: $bg-color;
+    border: .15rem solid $brand-color;
     border-radius: 50%;
-    border: 0.15rem solid $brand-color;
 
     .js &,
     .cssanimations & {
